@@ -11,6 +11,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 namespace LogProDesk
 {
     public partial class EmployeeInfo : Form
@@ -223,7 +226,7 @@ namespace LogProDesk
 
                     ptbPhoto.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                    ptbPhoto.Image = Image.FromFile(imagename);
+                    ptbPhoto.Image = System.Drawing.Image.FromFile(imagename);
 
                 }
 
@@ -624,6 +627,73 @@ namespace LogProDesk
             bw.Flush();
             bw.Close();
             fs.Close();
+        }
+
+        private void btnExportTo_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Pdf Files|*.pdf"; ;
+            sfd.FileName = "Employee_List.pdf";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                //ToCsV(dataGridView1, @"c:\export.xls");
+                ToPDF(dgvEmployeeDetail, sfd.FileName);
+            }
+            
+        }
+
+        private void ToPDF(DataGridView dgvEmployeeDetail, string filename)
+        {
+            //Creating iTextSharp Table from the DataTable data
+            PdfPTable pdfTable = new PdfPTable(dgvEmployeeDetail.ColumnCount-1);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 90;
+            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfTable.DefaultCell.BorderWidth = 1;
+
+            //Adding Header row
+            foreach (DataGridViewColumn column in dgvEmployeeDetail.Columns)
+            {
+                if (dgvEmployeeDetail.ColumnCount != column.Index)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                    pdfTable.AddCell(cell);
+                }
+            }
+
+            //Adding DataRow
+            foreach (DataGridViewRow row in dgvEmployeeDetail.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (dgvEmployeeDetail.ColumnCount != cell.ColumnIndex)
+                    {
+                        if (cell.Value == null)
+                            pdfTable.AddCell("");
+                        else
+                            pdfTable.AddCell(cell.Value.ToString());
+                    }
+                }
+            }
+
+            //Exporting to PDF
+            string folderPath = "C:\\PDFs\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            using (FileStream stream = new FileStream(filename, FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                Paragraph p = new Paragraph("List of reported UFO sightings in 20th century");
+                pdfDoc.Add(p);
+                pdfDoc.Add(pdfTable);
+                pdfDoc.Close();
+                stream.Close();
+            }
         }
     }
 }
