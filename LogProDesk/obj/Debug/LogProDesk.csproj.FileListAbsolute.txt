@@ -1,0 +1,19 @@
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\bin\Debug\LogProDesk.exe.config
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\bin\Debug\LogProDesk.exe
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\bin\Debug\LogProDesk.pdb
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\bin\Debug\EntityFramework.dll
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\bin\Debug\EntityFramework.xml
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\obj\Debug\LogProDesk.csprojResolveAssemblyReference.cache
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\obj\Debug\LogProDesk.EmployeeInfo.resources
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\obj\Debug\LogProDesk.Login.resources
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\obj\Debug\LogProDesk.Properties.Resources.resources
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\obj\Debug\LogProDesk.csproj.GenerateResource.Cache
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\obj\Debug\LogProDesk.exe
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\obj\Debug\LogProDesk.pdb
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\obj\Debug\LogProDesk.Home.resources
+C:\Users\ahsanal.r\Documents\Visual Studio 2015\Projects\LogProDesk\LogProDesk\obj\Debug\LogProDesk.HolidayInfo.resources
+C:\Users\ahsanal.r\Source\Repos\LogProDesk\LogProDesk\bin\Debug\LogProDesk.exe.config
+C:\Users\ahsanal.r\Source\Repos\LogProDesk\LogProDesk\obj\Debug\LogProDesk.exe
+C:\Users\ahsanal.r\Source\Repos\LogProDesk\LogProDesk\obj\Debug\LogProDesk.pdb
