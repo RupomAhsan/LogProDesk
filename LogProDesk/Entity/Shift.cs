@@ -16,10 +16,6 @@ namespace LogProDesk.Entity
 
         public int? CycleUnitID { get; set; }
 
-        public int? CompanyID { get; set; }
-
-        public int? DepartmentID { get; set; }
-
         public int? BranchID { get; set; }
 
         public DateTime? CreatedDate { get; set; }

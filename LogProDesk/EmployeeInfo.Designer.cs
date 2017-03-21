@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
             this.dtpDoB = new System.Windows.Forms.DateTimePicker();
@@ -92,16 +91,10 @@
             this.txtSearchText = new System.Windows.Forms.TextBox();
             this.dgvEmployeeDetail = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
-            this.logProDeskDBDataSet = new LogProDesk.LogProDeskDBDataSet();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeTableAdapter = new LogProDesk.LogProDeskDBDataSetTableAdapters.EmployeeTableAdapter();
-            this.btnExportTo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPhoto)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logProDeskDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -161,10 +154,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblOperationType);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(939, 537);
+            this.panel1.Size = new System.Drawing.Size(939, 312);
             this.panel1.TabIndex = 0;
             // 
             // label30
@@ -698,7 +690,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnExportTo);
             this.panel2.Controls.Add(this.btnExportToExcel);
             this.panel2.Controls.Add(this.lblEmployeeID);
             this.panel2.Controls.Add(this.txtSearchText);
@@ -707,7 +698,7 @@
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Location = new System.Drawing.Point(13, 318);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(914, 207);
+            this.panel2.Size = new System.Drawing.Size(926, 207);
             this.panel2.TabIndex = 1;
             // 
             // btnExportToExcel
@@ -723,7 +714,7 @@
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(706, 14);
+            this.lblEmployeeID.Location = new System.Drawing.Point(12, 14);
             this.lblEmployeeID.Name = "lblEmployeeID";
             this.lblEmployeeID.Size = new System.Drawing.Size(0, 13);
             this.lblEmployeeID.TabIndex = 9;
@@ -758,37 +749,13 @@
             this.label31.TabIndex = 0;
             this.label31.Text = "Employee List :";
             // 
-            // logProDeskDBDataSet
-            // 
-            this.logProDeskDBDataSet.DataSetName = "LogProDeskDBDataSet";
-            this.logProDeskDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.logProDeskDBDataSet;
-            // 
-            // employeeTableAdapter
-            // 
-            this.employeeTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnExportTo
-            // 
-            this.btnExportTo.Location = new System.Drawing.Point(649, 3);
-            this.btnExportTo.Name = "btnExportTo";
-            this.btnExportTo.Size = new System.Drawing.Size(75, 23);
-            this.btnExportTo.TabIndex = 11;
-            this.btnExportTo.Text = "E&xport to PDF";
-            this.btnExportTo.UseVisualStyleBackColor = true;
-            this.btnExportTo.Click += new System.EventHandler(this.btnExportTo_Click);
-            // 
             // EmployeeInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 537);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(946, 531);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "EmployeeInfo";
             this.Text = "EmployeeInfo";
             this.Load += new System.EventHandler(this.EmployeeInfo_Load);
@@ -798,8 +765,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logProDeskDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -864,14 +829,10 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.DataGridView dgvEmployeeDetail;
-        private LogProDeskDBDataSet logProDeskDBDataSet;
-        private System.Windows.Forms.BindingSource employeeBindingSource;
-        private LogProDeskDBDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.TextBox txtSearchText;
         private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.Button btnExportToExcel;
-        private System.Windows.Forms.Button btnExportTo;
     }
 }

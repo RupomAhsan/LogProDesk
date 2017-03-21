@@ -14,6 +14,8 @@ namespace LogProDesk.Entity
         [StringLength(50)]
         public string Name { get; set; }
 
+        public int CompanyID { get; set; }
+
         public DateTime? CreatedDate { get; set; }
 
         public int? CreatedBy { get; set; }

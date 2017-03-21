@@ -22,7 +22,18 @@ namespace LogProDesk.Entity
 
         public TimeSpan? Time { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
+        [DataType(DataType.DateTime)]
+        private DateTime createdDate = DateTime.MinValue;
+        //public DateTime CreatedOn;
+        public DateTime CreatedDate
+        {
+            get
+            {
+                return (createdDate == DateTime.MinValue) ? DateTime.Now : createdDate;
+            }
+            set { createdDate = value; }
+        }
+        //  public DateTime CreatedDate { get; set; }
 
         public int? CreatedBy { get; set; }
 
@@ -52,9 +63,5 @@ namespace LogProDesk.Entity
         public bool? IsOverTime { get; set; }
 
         public bool? IsEarlyLeave { get; set; }
-
-        public virtual AttendanceState AttendanceState { get; set; }
-
-        public virtual ScheduleAssign ScheduleAssign { get; set; }
     }
 }

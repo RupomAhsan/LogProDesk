@@ -14,7 +14,18 @@ namespace LogProDesk.Entity
         [StringLength(50)]
         public string Name { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
+        [DataType(DataType.DateTime)]
+        private DateTime createdDate = DateTime.MinValue;
+        //public DateTime CreatedOn;
+        public DateTime CreatedDate
+        {
+            get
+            {
+                return (createdDate == DateTime.MinValue) ? DateTime.Now : createdDate;
+            }
+            set { createdDate = value; }
+        }
+        //  public DateTime CreatedDate { get; set; }
 
         public int? CreatedBy { get; set; }
 

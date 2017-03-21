@@ -11,22 +11,16 @@ namespace LogProDesk.Entity
     {
         public int Id { get; set; }
 
+        public int? BranchID { get; set; }
+
         [StringLength(50)]
         public string Name { get; set; }
 
-        public DateTime? StartDate { get; set; }
+        public DateTime StartDate { get; set; }
 
-        public DateTime? EndDate { get; set; }
+        public DateTime EndDate { get; set; }
 
-        public int? TotalDays { get; set; }
-
-        public int? FinancialYear { get; set; }
-
-        public int? CompanyID { get; set; }
-
-        public int? DepartmentID { get; set; }
-
-        public int? BranchID { get; set; }
+        public int TotalDays { get; set; }
 
         [DataType(DataType.DateTime)]
         private DateTime createdDate = DateTime.MinValue;
@@ -47,10 +41,8 @@ namespace LogProDesk.Entity
 
         public int? UpdatedBy { get; set; }
 
-        public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
 
-        public bool? IsActive { get; set; }
-
-        
+        public bool IsActive { get; set; }
     }
 }

@@ -34,10 +34,6 @@ namespace LogProDesk.Entity
 
         public double? TotalWorkTime { get; set; }
 
-        public int? CompanyID { get; set; }
-
-        public int? DepartmentID { get; set; }
-
         public int? BranchID { get; set; }
 
         public bool? IsCheckInMandatory { get; set; }

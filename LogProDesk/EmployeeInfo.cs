@@ -11,9 +11,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Reflection;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
 namespace LogProDesk
 {
     public partial class EmployeeInfo : Form
@@ -46,8 +43,8 @@ namespace LogProDesk
         {
 
             var results= (from employee in db.Employees
-                          join company in db.Companies on employee.CompanyID equals company.Id into ec
-                          from ec1 in ec.DefaultIfEmpty()
+                          //join company in db.Companies on employee.CompanyID equals company.Id into ec
+                          //from ec1 in ec.DefaultIfEmpty()
                           join branch in db.Branches on employee.BranchID equals branch.Id into eb
                           from eb1 in eb.DefaultIfEmpty()
                           join department in db.Departments on employee.DepartmentID equals department.Id into ed
@@ -67,7 +64,7 @@ namespace LogProDesk
                           select new
                           {
                               employee.Id,
-                              Company = ec1.Name,
+                              //Company = ec1.Name,
                               Branch=eb1.Name,
                               DepartmentName=ed1.Name,
                               employee.EmployeeNo,
@@ -266,14 +263,9 @@ namespace LogProDesk
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
                 }                
-                
-                
             }
-
-
         }
 
 
@@ -379,7 +371,7 @@ namespace LogProDesk
         private Employee LoadEmployeeData(Employee anEmployee)
         {
            // Employee anEmployee=new Employee ();
-            anEmployee.CompanyID = Convert.ToInt32(cboCompany.SelectedValue);
+            //anEmployee.CompanyID = Convert.ToInt32(cboCompany.SelectedValue);
             anEmployee.BranchID = Convert.ToInt32(cboBranch.SelectedValue);
             anEmployee.DepartmentID = Convert.ToInt32(cboDepartment.SelectedValue);
             anEmployee.EmployeeNo = txtEmployeeNo.Text.Trim();
@@ -418,7 +410,7 @@ namespace LogProDesk
         private void EmployeeInfo_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'logProDeskDBDataSet.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.logProDeskDBDataSet.Employee);
+            //this.employeeTableAdapter.Fill(db.Employees);
 
         }
 
@@ -449,7 +441,7 @@ namespace LogProDesk
 
         private void PopulateEmployeeInfo(Employee employee)
         {
-            cboCompany.SelectedValue = employee.CompanyID == null ? 0 : employee.CompanyID;
+            //cboCompany.SelectedValue = employee.CompanyID == null ? 0 : employee.CompanyID;
             cboBranch.SelectedValue = employee.BranchID == null ? 0 : employee.BranchID;
             cboDepartment.SelectedValue= employee.DepartmentID == null ? 0 : employee.DepartmentID;
 
@@ -484,8 +476,8 @@ namespace LogProDesk
                 return;
             }
             var results = (from employee in db.Employees
-                           join company in db.Companies on employee.CompanyID equals company.Id into ec
-                           from ec1 in ec.DefaultIfEmpty()
+                           //join company in db.Companies on employee.CompanyID equals company.Id into ec
+                           //from ec1 in ec.DefaultIfEmpty()
                            join branch in db.Branches on employee.BranchID equals branch.Id into eb
                            from eb1 in eb.DefaultIfEmpty()
                            join department in db.Departments on employee.DepartmentID equals department.Id into ed
@@ -505,7 +497,7 @@ namespace LogProDesk
                            select new
                            {
                                employee.Id,
-                               Company = ec1.Name,
+                               //Company = ec1.Name,
                                Branch = eb1.Name,
                                DepartmentName = ed1.Name,
                                employee.EmployeeNo,
@@ -644,56 +636,56 @@ namespace LogProDesk
 
         private void ToPDF(DataGridView dgvEmployeeDetail, string filename)
         {
-            //Creating iTextSharp Table from the DataTable data
-            PdfPTable pdfTable = new PdfPTable(dgvEmployeeDetail.ColumnCount-1);
-            pdfTable.DefaultCell.Padding = 3;
-            pdfTable.WidthPercentage = 90;
-            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-            pdfTable.DefaultCell.BorderWidth = 1;
+            ////Creating iTextSharp Table from the DataTable data
+            //PdfPTable pdfTable = new PdfPTable(dgvEmployeeDetail.ColumnCount-1);
+            //pdfTable.DefaultCell.Padding = 3;
+            //pdfTable.WidthPercentage = 90;
+            //pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            //pdfTable.DefaultCell.BorderWidth = 1;
 
-            //Adding Header row
-            foreach (DataGridViewColumn column in dgvEmployeeDetail.Columns)
-            {
-                if (dgvEmployeeDetail.ColumnCount != column.Index)
-                {
-                    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-                    cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
-                    pdfTable.AddCell(cell);
-                }
-            }
+            ////Adding Header row
+            //foreach (DataGridViewColumn column in dgvEmployeeDetail.Columns)
+            //{
+            //    if (dgvEmployeeDetail.ColumnCount != column.Index)
+            //    {
+            //        PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+            //        cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+            //        pdfTable.AddCell(cell);
+            //    }
+            //}
 
-            //Adding DataRow
-            foreach (DataGridViewRow row in dgvEmployeeDetail.Rows)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    if (dgvEmployeeDetail.ColumnCount != cell.ColumnIndex)
-                    {
-                        if (cell.Value == null)
-                            pdfTable.AddCell("");
-                        else
-                            pdfTable.AddCell(cell.Value.ToString());
-                    }
-                }
-            }
+            ////Adding DataRow
+            //foreach (DataGridViewRow row in dgvEmployeeDetail.Rows)
+            //{
+            //    foreach (DataGridViewCell cell in row.Cells)
+            //    {
+            //        if (dgvEmployeeDetail.ColumnCount != cell.ColumnIndex)
+            //        {
+            //            if (cell.Value == null)
+            //                pdfTable.AddCell("");
+            //            else
+            //                pdfTable.AddCell(cell.Value.ToString());
+            //        }
+            //    }
+            //}
 
-            //Exporting to PDF
-            string folderPath = "C:\\PDFs\\";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            using (FileStream stream = new FileStream(filename, FileMode.Create))
-            {
-                Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 10f, 0f);
-                PdfWriter.GetInstance(pdfDoc, stream);
-                pdfDoc.Open();
-                Paragraph p = new Paragraph("List of reported UFO sightings in 20th century");
-                pdfDoc.Add(p);
-                pdfDoc.Add(pdfTable);
-                pdfDoc.Close();
-                stream.Close();
-            }
+            ////Exporting to PDF
+            //string folderPath = "C:\\PDFs\\";
+            //if (!Directory.Exists(folderPath))
+            //{
+            //    Directory.CreateDirectory(folderPath);
+            //}
+            //using (FileStream stream = new FileStream(filename, FileMode.Create))
+            //{
+            //    Document pdfDoc = new Document(PageSize.A4.Rotate(), 10f, 10f, 10f, 0f);
+            //    PdfWriter.GetInstance(pdfDoc, stream);
+            //    pdfDoc.Open();
+            //    Paragraph p = new Paragraph("List of reported UFO sightings in 20th century");
+            //    pdfDoc.Add(p);
+            //    pdfDoc.Add(pdfTable);
+            //    pdfDoc.Close();
+            //    stream.Close();
+            //}
         }
     }
 }

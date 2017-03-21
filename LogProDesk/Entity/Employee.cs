@@ -11,6 +11,8 @@ namespace LogProDesk.Entity
     {
         public int Id { get; set; }
 
+        public int? BranchID { get; set; }
+
         [StringLength(50)]
         public string EmployeeNo { get; set; }
 
@@ -19,11 +21,7 @@ namespace LogProDesk.Entity
 
         public int? DesignationID { get; set; }
 
-        public int? CompanyID { get; set; }
-
         public int? DepartmentID { get; set; }
-
-        public int? BranchID { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -73,7 +71,7 @@ namespace LogProDesk.Entity
             }
             set { createdDate = value; }
         }
-      //  public DateTime CreatedDate { get; set; }
+        //  public DateTime CreatedDate { get; set; }
 
         public DateTime? PasswordLastUpdated { get; set; }
 

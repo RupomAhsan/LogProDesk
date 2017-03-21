@@ -40,25 +40,25 @@ namespace LogProDesk
         private void PopulateHolidayGrid()
         {
             var results = (from holiday in db.Holidays
-                           join company in db.Companies on holiday.CompanyID equals company.Id into ec
-                           from ec1 in ec.DefaultIfEmpty()
+                           //join company in db.Companies on holiday.CompanyID equals company.Id into ec
+                          // from ec1 in ec.DefaultIfEmpty()
                            join branch in db.Branches on holiday.BranchID equals branch.Id into eb
                            from eb1 in eb.DefaultIfEmpty()
-                           join department in db.Departments on holiday.DepartmentID equals department.Id into ed
-                           from ed1 in ed.DefaultIfEmpty()
+                           //join department in db.Departments on holiday.DepartmentID equals department.Id into ed
+                           //from ed1 in ed.DefaultIfEmpty()
                            where holiday.IsDeleted == false
 
                            select new
                            {
                                holiday.Id,
-                               Company = ec1.Name,
+                              // Company = ec1.Name,
                                Branch = eb1.Name,
-                               DepartmentName = ed1.Name,
+                              // DepartmentName = ed1.Name,
                                holiday.Name,
                                holiday.StartDate,
                                holiday.EndDate,
                                holiday.TotalDays,
-                               holiday.FinancialYear,
+                              // holiday.FinancialYear,
                                Status = holiday.IsActive == true ? "Active" : "Inactive"
                            }).ToList();
             dgvHolidayDetail.DataSource = results;
@@ -199,16 +199,16 @@ namespace LogProDesk
         private Holiday LoadHolidayData(Holiday anHoliday)
         {
             // Holiday anHoliday=new Holiday ();
-            anHoliday.CompanyID = Convert.ToInt32(cboCompany.SelectedValue);
+            //anHoliday.CompanyID = Convert.ToInt32(cboCompany.SelectedValue);
             anHoliday.BranchID = Convert.ToInt32(cboBranch.SelectedValue);
-            anHoliday.DepartmentID = Convert.ToInt32(cboDepartment.SelectedValue);
+            //anHoliday.DepartmentID = Convert.ToInt32(cboDepartment.SelectedValue);
             anHoliday.Name = txtName.Text.Trim();
             anHoliday.TotalDays = Convert.ToInt32(nmrTotalDays.Value);
             if (dtpStartingDate.Value != null)
             {
                 anHoliday.StartDate = dtpStartingDate.Value;
                 anHoliday.EndDate = dtpStartingDate.Value.AddDays(Convert.ToDouble(nmrTotalDays.Value)-1);
-                anHoliday.FinancialYear = dtpStartingDate.Value.Year;
+                //anHoliday.FinancialYear = dtpStartingDate.Value.Year;
             }            
             anHoliday.IsActive = Convert.ToBoolean(cboStatus.SelectedValue);
             anHoliday.IsDeleted = false;
@@ -239,9 +239,9 @@ namespace LogProDesk
 
         private void PopulateHolidayInfo(Holiday holiday)
         {
-            cboCompany.SelectedValue = holiday.CompanyID == null ? 0 : holiday.CompanyID;
+            //cboCompany.SelectedValue = holiday.CompanyID == null ? 0 : holiday.CompanyID;
             cboBranch.SelectedValue = holiday.BranchID == null ? 0 : holiday.BranchID;
-            cboDepartment.SelectedValue = holiday.DepartmentID == null ? 0 : holiday.DepartmentID;
+            //cboDepartment.SelectedValue = holiday.DepartmentID == null ? 0 : holiday.DepartmentID;
 
             txtName.Text = holiday.Name;
             if(holiday.TotalDays == null || holiday.TotalDays<1)
@@ -261,25 +261,25 @@ namespace LogProDesk
                 return;
             }
             var results = (from holiday in db.Holidays
-                           join company in db.Companies on holiday.CompanyID equals company.Id into ec
-                           from ec1 in ec.DefaultIfEmpty()
+                           //join company in db.Companies on holiday.CompanyID equals company.Id into ec
+                           //from ec1 in ec.DefaultIfEmpty()
                            join branch in db.Branches on holiday.BranchID equals branch.Id into eb
                            from eb1 in eb.DefaultIfEmpty()
-                           join department in db.Departments on holiday.DepartmentID equals department.Id into ed
-                           from ed1 in ed.DefaultIfEmpty()
+                           //join department in db.Departments on holiday.DepartmentID equals department.Id into ed
+                          // from ed1 in ed.DefaultIfEmpty()
                            where holiday.IsDeleted == false && (holiday.StartDate >= dtpFrom.Value && holiday.StartDate <= dtpFrom.Value)
 
                            select new
                            {
                                holiday.Id,
-                               Company = ec1.Name,
+                               //Company = ec1.Name,
                                Branch = eb1.Name,
-                               DepartmentName = ed1.Name,
+                               //DepartmentName = ed1.Name,
                                holiday.Name,
                                holiday.StartDate,
                                holiday.EndDate,
                                holiday.TotalDays,
-                               holiday.FinancialYear,
+                               //holiday.FinancialYear,
                                Status = holiday.IsActive == true ? "Active" : "Inactive"
                            }).ToList();
             dgvHolidayDetail.DataSource = results;

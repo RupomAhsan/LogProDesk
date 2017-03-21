@@ -22,6 +22,7 @@ namespace LogProDesk.Entity
         public virtual DbSet<Education> Educations { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Holiday> Holidays { get; set; }
+        public virtual DbSet<HolidayDetail> HolidayDetails { get; set; }
         public virtual DbSet<Leave> Leaves { get; set; }
         public virtual DbSet<LeaveType> LeaveTypes { get; set; }
         public virtual DbSet<MaritialStatu> MaritialStatus { get; set; }
@@ -33,6 +34,7 @@ namespace LogProDesk.Entity
         public virtual DbSet<Shift> Shifts { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TimeTable> TimeTables { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,17 +46,36 @@ namespace LogProDesk.Entity
                 .Property(e => e.Name)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<AttendanceState>()
-                .HasMany(e => e.Attendances)
-                .WithOptional(e => e.AttendanceState)
-                .HasForeignKey(e => e.AttendanceSateID);
-
             modelBuilder.Entity<Branch>()
                 .Property(e => e.Name)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Company>()
                 .Property(e => e.Name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Company>()
+                .Property(e => e.Slogan)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Company>()
+                .Property(e => e.ContactNumber)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Company>()
+                .Property(e => e.Email)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Company>()
+                .Property(e => e.Website)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Company>()
+                .Property(e => e.Address1)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Company>()
+                .Property(e => e.Address2)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CycleUnit>()
@@ -109,7 +130,13 @@ namespace LogProDesk.Entity
                 .Property(e => e.Name)
                 .IsUnicode(false);
 
-           
+            modelBuilder.Entity<HolidayDetail>()
+                .Property(e => e.DayName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<HolidayDetail>()
+                .Property(e => e.DaySequence)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Leave>()
                 .Property(e => e.Reason)
@@ -141,6 +168,14 @@ namespace LogProDesk.Entity
 
             modelBuilder.Entity<TimeTable>()
                 .Property(e => e.Name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.UserName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<User>()
+                .Property(e => e.Password)
                 .IsUnicode(false);
         }
     }

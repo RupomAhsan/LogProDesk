@@ -56,15 +56,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -93,6 +92,7 @@
     <Compile Include="Entity\Education.cs" />
     <Compile Include="Entity\Employee.cs" />
     <Compile Include="Entity\Holiday.cs" />
+    <Compile Include="Entity\HolidayDetail.cs" />
     <Compile Include="Entity\Leave.cs" />
     <Compile Include="Entity\LeaveType.cs" />
     <Compile Include="Entity\MaritialStatu.cs" />
@@ -104,6 +104,79 @@
     <Compile Include="Entity\Shift.cs" />
     <Compile Include="Entity\sysdiagram.cs" />
     <Compile Include="Entity\TimeTable.cs" />
+    <Compile Include="Entity\User.cs" />
+    <Compile Include="Fomrs\Attendances\frmHoliday.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Attendances\frmHoliday.Designer.cs">
+      <DependentUpon>frmHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Attendances\frmTimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Attendances\frmTimetable.Designer.cs">
+      <DependentUpon>frmTimetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Authentications\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Authentications\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Authentications\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Authentications\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmRole.Designer.cs">
+      <DependentUpon>frmRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmMaritialStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmMaritialStatus.Designer.cs">
+      <DependentUpon>frmMaritialStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmDesignation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmDesignation.Designer.cs">
+      <DependentUpon>frmDesignation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmEducation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmEducation.Designer.cs">
+      <DependentUpon>frmEducation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmDepartment.Designer.cs">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmBranch.Designer.cs">
+      <DependentUpon>frmBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fomrs\Settings\frmCompany.Designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="HolidayInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,8 +202,52 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDetail\Datasets\EmployeDetailsView.cs" />
+    <Compile Include="ReportDetail\Viewer\EmployeeReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportDetail\Viewer\EmployeeReportViewer.Designer.cs">
+      <DependentUpon>EmployeeReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UserSessions.cs" />
     <EmbeddedResource Include="EmployeeInfo.resx">
       <DependentUpon>EmployeeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Attendances\frmHoliday.resx">
+      <DependentUpon>frmHoliday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Attendances\frmTimetable.resx">
+      <DependentUpon>frmTimetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Authentications\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Authentications\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Settings\frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Settings\frmRole.resx">
+      <DependentUpon>frmRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Settings\frmMaritialStatus.resx">
+      <DependentUpon>frmMaritialStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Settings\frmDesignation.resx">
+      <DependentUpon>frmDesignation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Settings\frmEducation.resx">
+      <DependentUpon>frmEducation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Settings\frmDepartment.resx">
+      <DependentUpon>frmDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Settings\frmBranch.resx">
+      <DependentUpon>frmBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fomrs\Settings\frmCompany.resx">
+      <DependentUpon>frmCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HolidayInfo.resx">
       <DependentUpon>HolidayInfo.cs</DependentUpon>
@@ -149,7 +266,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportDetail\Reports\rptEmployeeDetail.rdlc" />
+    <EmbeddedResource Include="ReportDetail\Viewer\EmployeeReportViewer.resx">
+      <DependentUpon>EmployeeReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="LogProDesk.ReportDetail.Datasets.EmployeDetailsView.datasource" />
     <None Include="LogProDeskDBDataSet.xsc">
       <DependentUpon>LogProDeskDBDataSet.xsd</DependentUpon>
     </None>
@@ -185,6 +308,63 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\Icons\menu.ico" />
+    <Content Include="Contents\Imgaes\login.png" />
+    <None Include="Resources\1490103079_access.png" />
+    <None Include="Resources\login2.png" />
+    <None Include="Resources\1490102911_23_Page_Rank_Badge.png" />
+    <None Include="Resources\1490102870_Dating.png" />
+    <None Include="Resources\1490102847_Education_256.png" />
+    <None Include="Resources\1490102826_graduated.png" />
+    <None Include="Resources\1490102821_graduated.png" />
+    <None Include="Resources\1490101892_Home1.png" />
+    <None Include="Resources\1490101887_Home1.png" />
+    <None Include="Resources\update_256.png" />
+    <None Include="Resources\update_16.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\DeleteRed.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\add_16.png" />
+    <None Include="Resources\1490102581__13.png" />
+    <None Include="Resources\1490102575__13.png" />
+    <None Include="Resources\1490102567__13.png" />
+    <None Include="Resources\1490102525_go-home.png" />
+    <None Include="Resources\1490102519_go-home.png" />
+    <None Include="Resources\1490102435_Home-icon.png" />
+    <None Include="Resources\1490102180_application-pgp-signature.png" />
+    <None Include="Resources\1490102173_application-pgp-signature.png" />
+    <None Include="Resources\1490102135_reports.png" />
+    <None Include="Resources\1490102130_reports.png" />
+    <None Include="Resources\1490102019_binary-tree.png" />
+    <None Include="Resources\1490102013_binary-tree.png" />
+    <None Include="Resources\1490101990_38_Target_Audience.png" />
+    <None Include="Resources\1490101985_38_Target_Audience.png" />
+    <None Include="Resources\1490101892_Home.png" />
+    <None Include="Resources\1490101887_Home.png" />
+    <None Include="Resources\1490101862_Company.png" />
+    <None Include="Resources\1490101856_Company.png" />
+    <None Include="Resources\1490101736_Settings-5.png" />
+    <None Include="Resources\1490101731_Settings-5.png" />
+    <None Include="Resources\1490101651_Manager.png" />
+    <None Include="Resources\1490101645_Manager.png" />
+    <None Include="Resources\1490101551_Timetable.png" />
+    <None Include="Resources\1490101546_Timetable.png" />
+    <None Include="Resources\1490101504_preferences-system-time.png" />
+    <None Include="Resources\1490101496_preferences-system-time.png" />
+    <None Include="Resources\1490101470_Calendar.png" />
+    <None Include="Resources\1490101463_Calendar.png" />
+    <None Include="Resources\1490101169_Remove.png" />
+    <None Include="Resources\1490101080_edit-clear.png" />
+    <None Include="Resources\1490101022_view-refresh.png" />
+    <None Include="Resources\1490100309_file_Exel_download.png" />
+    <None Include="Resources\1490100257_Help_Circle_Blue.png" />
+    <None Include="Resources\1490100251_Help_Circle_Blue.png" />
+    <None Include="Resources\1490100204_DeleteRed.png" />
+    <None Include="Resources\cancel_btn.png" />
+    <None Include="Resources\login_btn.png" />
+    <None Include="Resources\login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

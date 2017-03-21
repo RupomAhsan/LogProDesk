@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LogProDesk.Fomrs.Attendances;
+using LogProDesk.Fomrs.Settings;
+using LogProDesk.ReportDetail.Viewer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,8 +29,74 @@ namespace LogProDesk
 
         private void holidayToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HolidayInfo aHolidayInfo = new HolidayInfo();
-            aHolidayInfo.ShowDialog();
+            frmHoliday afrmHoliday = new frmHoliday();
+            afrmHoliday.ShowDialog();
+        }
+
+        private void employeeDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EmployeeReportViewer aEmployeeReportViewer = new EmployeeReportViewer();
+            aEmployeeReportViewer.Show();
+        }
+
+        private void companyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompany afrmCompany = new frmCompany();
+            afrmCompany.ShowDialog();
+        }
+
+        private void branchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBranch afrmBranch = new frmBranch();
+            afrmBranch.ShowDialog();
+        }
+
+        private void departmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDepartment afrmDepartment = new frmDepartment();
+            afrmDepartment.ShowDialog();
+        }
+
+        private void educationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEducation afrmEducation = new frmEducation();
+            afrmEducation.ShowDialog();
+        }
+
+        private void designationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDesignation afrmDesignation = new frmDesignation();
+            afrmDesignation.ShowDialog();
+        }
+
+       
+        private void maritialStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMaritialStatus afrmMaritialStatus = new frmMaritialStatus();
+            afrmMaritialStatus.ShowDialog();
+        }
+
+        private void roleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRole afrmRole = new frmRole();
+            afrmRole.ShowDialog();
+        }
+
+        private void timeTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTimetable afrmTimetable = new frmTimetable();
+            afrmTimetable.ShowDialog();
+        }
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUser anfrmUser = new frmUser();
+            anfrmUser.ShowDialog();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

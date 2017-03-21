@@ -9,12 +9,6 @@ namespace LogProDesk.Entity
     [Table("ScheduleAssign")]
     public partial class ScheduleAssign
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ScheduleAssign()
-        {
-            Attendances = new HashSet<Attendance>();
-        }
-
         public int Id { get; set; }
 
         public int? EmployeeID { get; set; }
@@ -36,8 +30,5 @@ namespace LogProDesk.Entity
         public bool? IsDeleted { get; set; }
 
         public bool? IsActive { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Attendance> Attendances { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LogProDesk.Fomrs.Authentications;
+using LogProDesk.Fomrs.Settings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,15 @@ namespace LogProDesk
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Home());
+            DialogResult result;
+            using (var loginForm = new frmLogin())
+                result = loginForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                // login was successful
+                Application.Run(new Home());
+            }
+           // Application.Run(new Home());
         }
     }
 }
