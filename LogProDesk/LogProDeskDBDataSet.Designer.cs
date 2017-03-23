@@ -48,7 +48,7 @@ namespace LogProDesk {
         
         private LeaveTypeDataTable tableLeaveType;
         
-        private MaritialStatusDataTable tableMaritialStatus;
+        private MaritalStatusDataTable tableMaritalStatus;
         
         private RoleDataTable tableRole;
         
@@ -104,7 +104,7 @@ namespace LogProDesk {
         
         private global::System.Data.DataRelation relationFK_Employee_Employee_UpdatedBy;
         
-        private global::System.Data.DataRelation relationFK_Employee_MaritialStatus;
+        private global::System.Data.DataRelation relationFK_Employee_MaritalStatus;
         
         private global::System.Data.DataRelation relationFK_Employee_Role;
         
@@ -120,7 +120,7 @@ namespace LogProDesk {
         
         private global::System.Data.DataRelation relationFK_Holiday_Employee_UpdatedBy;
         
-        private global::System.Data.DataRelation relationFK_MaritialStatus_Employee_CreateBy;
+        private global::System.Data.DataRelation relationFK_MaritalStatus_Employee_CreateBy;
         
         private global::System.Data.DataRelation relationFK_Sex_Employee_CreateBy;
         
@@ -188,8 +188,8 @@ namespace LogProDesk {
                 if ((ds.Tables["LeaveType"] != null)) {
                     base.Tables.Add(new LeaveTypeDataTable(ds.Tables["LeaveType"]));
                 }
-                if ((ds.Tables["MaritialStatus"] != null)) {
-                    base.Tables.Add(new MaritialStatusDataTable(ds.Tables["MaritialStatus"]));
+                if ((ds.Tables["MaritalStatus"] != null)) {
+                    base.Tables.Add(new MaritalStatusDataTable(ds.Tables["MaritalStatus"]));
                 }
                 if ((ds.Tables["Role"] != null)) {
                     base.Tables.Add(new RoleDataTable(ds.Tables["Role"]));
@@ -360,9 +360,9 @@ namespace LogProDesk {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public MaritialStatusDataTable MaritialStatus {
+        public MaritalStatusDataTable MaritalStatus {
             get {
-                return this.tableMaritialStatus;
+                return this.tableMaritalStatus;
             }
         }
         
@@ -559,8 +559,8 @@ namespace LogProDesk {
                 if ((ds.Tables["LeaveType"] != null)) {
                     base.Tables.Add(new LeaveTypeDataTable(ds.Tables["LeaveType"]));
                 }
-                if ((ds.Tables["MaritialStatus"] != null)) {
-                    base.Tables.Add(new MaritialStatusDataTable(ds.Tables["MaritialStatus"]));
+                if ((ds.Tables["MaritalStatus"] != null)) {
+                    base.Tables.Add(new MaritalStatusDataTable(ds.Tables["MaritalStatus"]));
                 }
                 if ((ds.Tables["Role"] != null)) {
                     base.Tables.Add(new RoleDataTable(ds.Tables["Role"]));
@@ -694,10 +694,10 @@ namespace LogProDesk {
                     this.tableLeaveType.InitVars();
                 }
             }
-            this.tableMaritialStatus = ((MaritialStatusDataTable)(base.Tables["MaritialStatus"]));
+            this.tableMaritalStatus = ((MaritalStatusDataTable)(base.Tables["MaritalStatus"]));
             if ((initTable == true)) {
-                if ((this.tableMaritialStatus != null)) {
-                    this.tableMaritialStatus.InitVars();
+                if ((this.tableMaritalStatus != null)) {
+                    this.tableMaritalStatus.InitVars();
                 }
             }
             this.tableRole = ((RoleDataTable)(base.Tables["Role"]));
@@ -772,7 +772,7 @@ namespace LogProDesk {
             this.relationFK_Employee_Education = this.Relations["FK_Employee_Education"];
             this.relationFK_Employee_Employee_CreatedBy = this.Relations["FK_Employee_Employee_CreatedBy"];
             this.relationFK_Employee_Employee_UpdatedBy = this.Relations["FK_Employee_Employee_UpdatedBy"];
-            this.relationFK_Employee_MaritialStatus = this.Relations["FK_Employee_MaritialStatus"];
+            this.relationFK_Employee_MaritalStatus = this.Relations["FK_Employee_MaritalStatus"];
             this.relationFK_Employee_Role = this.Relations["FK_Employee_Role"];
             this.relationFK_Employee_Sex = this.Relations["FK_Employee_Sex"];
             this.relationFK_Holiday_Branch = this.Relations["FK_Holiday_Branch"];
@@ -780,7 +780,7 @@ namespace LogProDesk {
             this.relationFK_Holiday_Department = this.Relations["FK_Holiday_Department"];
             this.relationFK_Holiday_Employee_CreatedBy = this.Relations["FK_Holiday_Employee_CreatedBy"];
             this.relationFK_Holiday_Employee_UpdatedBy = this.Relations["FK_Holiday_Employee_UpdatedBy"];
-            this.relationFK_MaritialStatus_Employee_CreateBy = this.Relations["FK_MaritialStatus_Employee_CreateBy"];
+            this.relationFK_MaritalStatus_Employee_CreateBy = this.Relations["FK_MaritalStatus_Employee_CreateBy"];
             this.relationFK_Sex_Employee_CreateBy = this.Relations["FK_Sex_Employee_CreateBy"];
         }
         
@@ -816,8 +816,8 @@ namespace LogProDesk {
             base.Tables.Add(this.tableLeave);
             this.tableLeaveType = new LeaveTypeDataTable();
             base.Tables.Add(this.tableLeaveType);
-            this.tableMaritialStatus = new MaritialStatusDataTable();
-            base.Tables.Add(this.tableMaritialStatus);
+            this.tableMaritalStatus = new MaritalStatusDataTable();
+            base.Tables.Add(this.tableMaritalStatus);
             this.tableRole = new RoleDataTable();
             base.Tables.Add(this.tableRole);
             this.tableSchedule = new ScheduleDataTable();
@@ -908,10 +908,10 @@ namespace LogProDesk {
                         this.tableEmployee.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableEmployee.LastUpdatedByColumn}, false);
             this.Relations.Add(this.relationFK_Employee_Employee_UpdatedBy);
-            this.relationFK_Employee_MaritialStatus = new global::System.Data.DataRelation("FK_Employee_MaritialStatus", new global::System.Data.DataColumn[] {
-                        this.tableMaritialStatus.IdColumn}, new global::System.Data.DataColumn[] {
+            this.relationFK_Employee_MaritalStatus = new global::System.Data.DataRelation("FK_Employee_MaritalStatus", new global::System.Data.DataColumn[] {
+                        this.tableMaritalStatus.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableEmployee.MaritualStatusIDColumn}, false);
-            this.Relations.Add(this.relationFK_Employee_MaritialStatus);
+            this.Relations.Add(this.relationFK_Employee_MaritalStatus);
             this.relationFK_Employee_Role = new global::System.Data.DataRelation("FK_Employee_Role", new global::System.Data.DataColumn[] {
                         this.tableRole.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableEmployee.RoleIDColumn}, false);
@@ -940,10 +940,10 @@ namespace LogProDesk {
                         this.tableEmployee.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableHoliday.UpdatedByColumn}, false);
             this.Relations.Add(this.relationFK_Holiday_Employee_UpdatedBy);
-            this.relationFK_MaritialStatus_Employee_CreateBy = new global::System.Data.DataRelation("FK_MaritialStatus_Employee_CreateBy", new global::System.Data.DataColumn[] {
+            this.relationFK_MaritalStatus_Employee_CreateBy = new global::System.Data.DataRelation("FK_MaritalStatus_Employee_CreateBy", new global::System.Data.DataColumn[] {
                         this.tableEmployee.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableMaritialStatus.CreatedByColumn}, false);
-            this.Relations.Add(this.relationFK_MaritialStatus_Employee_CreateBy);
+                        this.tableMaritalStatus.CreatedByColumn}, false);
+            this.Relations.Add(this.relationFK_MaritalStatus_Employee_CreateBy);
             this.relationFK_Sex_Employee_CreateBy = new global::System.Data.DataRelation("FK_Sex_Employee_CreateBy", new global::System.Data.DataColumn[] {
                         this.tableEmployee.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableSex.CreatedByColumn}, false);
@@ -1024,7 +1024,7 @@ namespace LogProDesk {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeMaritialStatus() {
+        private bool ShouldSerializeMaritalStatus() {
             return false;
         }
         
@@ -1174,7 +1174,7 @@ namespace LogProDesk {
         public delegate void LeaveTypeRowChangeEventHandler(object sender, LeaveTypeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void MaritialStatusRowChangeEventHandler(object sender, MaritialStatusRowChangeEvent e);
+        public delegate void MaritalStatusRowChangeEventHandler(object sender, MaritalStatusRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void RoleRowChangeEventHandler(object sender, RoleRowChangeEvent e);
@@ -4394,7 +4394,7 @@ namespace LogProDesk {
                         string MobileNumber, 
                         string EmailAddress, 
                         System.DateTime JoinDate, 
-                        MaritialStatusRow parentMaritialStatusRowByFK_Employee_MaritialStatus, 
+                        MaritalStatusRow parentMaritalStatusRowByFK_Employee_MaritalStatus, 
                         string Address, 
                         RoleRow parentRoleRowByFK_Employee_Role, 
                         bool IsDeleted, 
@@ -4453,8 +4453,8 @@ namespace LogProDesk {
                 if ((parentEducationRowByFK_Employee_Education != null)) {
                     columnValuesArray[11] = parentEducationRowByFK_Employee_Education[0];
                 }
-                if ((parentMaritialStatusRowByFK_Employee_MaritialStatus != null)) {
-                    columnValuesArray[15] = parentMaritialStatusRowByFK_Employee_MaritialStatus[0];
+                if ((parentMaritalStatusRowByFK_Employee_MaritalStatus != null)) {
+                    columnValuesArray[15] = parentMaritalStatusRowByFK_Employee_MaritalStatus[0];
                 }
                 if ((parentRoleRowByFK_Employee_Role != null)) {
                     columnValuesArray[17] = parentRoleRowByFK_Employee_Role[0];
@@ -5968,7 +5968,7 @@ namespace LogProDesk {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class MaritialStatusDataTable : global::System.Data.TypedTableBase<MaritialStatusRow> {
+        public partial class MaritalStatusDataTable : global::System.Data.TypedTableBase<MaritalStatusRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -5982,8 +5982,8 @@ namespace LogProDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaritialStatusDataTable() {
-                this.TableName = "MaritialStatus";
+            public MaritalStatusDataTable() {
+                this.TableName = "MaritalStatus";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -5991,7 +5991,7 @@ namespace LogProDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal MaritialStatusDataTable(global::System.Data.DataTable table) {
+            internal MaritalStatusDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -6008,7 +6008,7 @@ namespace LogProDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected MaritialStatusDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected MaritalStatusDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -6064,59 +6064,59 @@ namespace LogProDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaritialStatusRow this[int index] {
+            public MaritalStatusRow this[int index] {
                 get {
-                    return ((MaritialStatusRow)(this.Rows[index]));
+                    return ((MaritalStatusRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MaritialStatusRowChangeEventHandler MaritialStatusRowChanging;
+            public event MaritalStatusRowChangeEventHandler MaritalStatusRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MaritialStatusRowChangeEventHandler MaritialStatusRowChanged;
+            public event MaritalStatusRowChangeEventHandler MaritalStatusRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MaritialStatusRowChangeEventHandler MaritialStatusRowDeleting;
+            public event MaritalStatusRowChangeEventHandler MaritalStatusRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MaritialStatusRowChangeEventHandler MaritialStatusRowDeleted;
+            public event MaritalStatusRowChangeEventHandler MaritalStatusRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddMaritialStatusRow(MaritialStatusRow row) {
+            public void AddMaritalStatusRow(MaritalStatusRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaritialStatusRow AddMaritialStatusRow(string Name, System.DateTime CreatedDate, EmployeeRow parentEmployeeRowByFK_MaritialStatus_Employee_CreateBy, bool IsDeleted) {
-                MaritialStatusRow rowMaritialStatusRow = ((MaritialStatusRow)(this.NewRow()));
+            public MaritalStatusRow AddMaritalStatusRow(string Name, System.DateTime CreatedDate, EmployeeRow parentEmployeeRowByFK_MaritalStatus_Employee_CreateBy, bool IsDeleted) {
+                MaritalStatusRow rowMaritalStatusRow = ((MaritalStatusRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
                         CreatedDate,
                         null,
                         IsDeleted};
-                if ((parentEmployeeRowByFK_MaritialStatus_Employee_CreateBy != null)) {
-                    columnValuesArray[3] = parentEmployeeRowByFK_MaritialStatus_Employee_CreateBy[0];
+                if ((parentEmployeeRowByFK_MaritalStatus_Employee_CreateBy != null)) {
+                    columnValuesArray[3] = parentEmployeeRowByFK_MaritalStatus_Employee_CreateBy[0];
                 }
-                rowMaritialStatusRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMaritialStatusRow);
-                return rowMaritialStatusRow;
+                rowMaritalStatusRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMaritalStatusRow);
+                return rowMaritalStatusRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaritialStatusRow FindById(int Id) {
-                return ((MaritialStatusRow)(this.Rows.Find(new object[] {
+            public MaritalStatusRow FindById(int Id) {
+                return ((MaritalStatusRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                MaritialStatusDataTable cln = ((MaritialStatusDataTable)(base.Clone()));
+                MaritalStatusDataTable cln = ((MaritalStatusDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -6124,7 +6124,7 @@ namespace LogProDesk {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new MaritialStatusDataTable();
+                return new MaritalStatusDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6163,28 +6163,28 @@ namespace LogProDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaritialStatusRow NewMaritialStatusRow() {
-                return ((MaritialStatusRow)(this.NewRow()));
+            public MaritalStatusRow NewMaritalStatusRow() {
+                return ((MaritalStatusRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new MaritialStatusRow(builder);
+                return new MaritalStatusRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(MaritialStatusRow);
+                return typeof(MaritalStatusRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.MaritialStatusRowChanged != null)) {
-                    this.MaritialStatusRowChanged(this, new MaritialStatusRowChangeEvent(((MaritialStatusRow)(e.Row)), e.Action));
+                if ((this.MaritalStatusRowChanged != null)) {
+                    this.MaritalStatusRowChanged(this, new MaritalStatusRowChangeEvent(((MaritalStatusRow)(e.Row)), e.Action));
                 }
             }
             
@@ -6192,8 +6192,8 @@ namespace LogProDesk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.MaritialStatusRowChanging != null)) {
-                    this.MaritialStatusRowChanging(this, new MaritialStatusRowChangeEvent(((MaritialStatusRow)(e.Row)), e.Action));
+                if ((this.MaritalStatusRowChanging != null)) {
+                    this.MaritalStatusRowChanging(this, new MaritalStatusRowChangeEvent(((MaritalStatusRow)(e.Row)), e.Action));
                 }
             }
             
@@ -6201,8 +6201,8 @@ namespace LogProDesk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.MaritialStatusRowDeleted != null)) {
-                    this.MaritialStatusRowDeleted(this, new MaritialStatusRowChangeEvent(((MaritialStatusRow)(e.Row)), e.Action));
+                if ((this.MaritalStatusRowDeleted != null)) {
+                    this.MaritalStatusRowDeleted(this, new MaritalStatusRowChangeEvent(((MaritalStatusRow)(e.Row)), e.Action));
                 }
             }
             
@@ -6210,14 +6210,14 @@ namespace LogProDesk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.MaritialStatusRowDeleting != null)) {
-                    this.MaritialStatusRowDeleting(this, new MaritialStatusRowChangeEvent(((MaritialStatusRow)(e.Row)), e.Action));
+                if ((this.MaritalStatusRowDeleting != null)) {
+                    this.MaritalStatusRowDeleting(this, new MaritalStatusRowChangeEvent(((MaritalStatusRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveMaritialStatusRow(MaritialStatusRow row) {
+            public void RemoveMaritalStatusRow(MaritalStatusRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -6244,7 +6244,7 @@ namespace LogProDesk {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "MaritialStatusDataTable";
+                attribute2.FixedValue = "MaritalStatusDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -12102,12 +12102,12 @@ namespace LogProDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaritialStatusRow MaritialStatusRow {
+            public MaritalStatusRow MaritalStatusRow {
                 get {
-                    return ((MaritialStatusRow)(this.GetParentRow(this.Table.ParentRelations["FK_Employee_MaritialStatus"])));
+                    return ((MaritalStatusRow)(this.GetParentRow(this.Table.ParentRelations["FK_Employee_MaritalStatus"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Employee_MaritialStatus"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Employee_MaritalStatus"]);
                 }
             }
             
@@ -12554,12 +12554,12 @@ namespace LogProDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaritialStatusRow[] GetMaritialStatusRows() {
-                if ((this.Table.ChildRelations["FK_MaritialStatus_Employee_CreateBy"] == null)) {
-                    return new MaritialStatusRow[0];
+            public MaritalStatusRow[] GetMaritalStatusRows() {
+                if ((this.Table.ChildRelations["FK_MaritalStatus_Employee_CreateBy"] == null)) {
+                    return new MaritalStatusRow[0];
                 }
                 else {
-                    return ((MaritialStatusRow[])(base.GetChildRows(this.Table.ChildRelations["FK_MaritialStatus_Employee_CreateBy"])));
+                    return ((MaritalStatusRow[])(base.GetChildRows(this.Table.ChildRelations["FK_MaritalStatus_Employee_CreateBy"])));
                 }
             }
             
@@ -13579,25 +13579,25 @@ namespace LogProDesk {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class MaritialStatusRow : global::System.Data.DataRow {
+        public partial class MaritalStatusRow : global::System.Data.DataRow {
             
-            private MaritialStatusDataTable tableMaritialStatus;
+            private MaritalStatusDataTable tableMaritalStatus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal MaritialStatusRow(global::System.Data.DataRowBuilder rb) : 
+            internal MaritalStatusRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableMaritialStatus = ((MaritialStatusDataTable)(this.Table));
+                this.tableMaritalStatus = ((MaritalStatusDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableMaritialStatus.IdColumn]));
+                    return ((int)(this[this.tableMaritalStatus.IdColumn]));
                 }
                 set {
-                    this[this.tableMaritialStatus.IdColumn] = value;
+                    this[this.tableMaritalStatus.IdColumn] = value;
                 }
             }
             
@@ -13606,14 +13606,14 @@ namespace LogProDesk {
             public string Name {
                 get {
                     try {
-                        return ((string)(this[this.tableMaritialStatus.NameColumn]));
+                        return ((string)(this[this.tableMaritalStatus.NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'MaritialStatus\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'MaritalStatus\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMaritialStatus.NameColumn] = value;
+                    this[this.tableMaritalStatus.NameColumn] = value;
                 }
             }
             
@@ -13622,14 +13622,14 @@ namespace LogProDesk {
             public System.DateTime CreatedDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableMaritialStatus.CreatedDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableMaritalStatus.CreatedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedDate\' in table \'MaritialStatus\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedDate\' in table \'MaritalStatus\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMaritialStatus.CreatedDateColumn] = value;
+                    this[this.tableMaritalStatus.CreatedDateColumn] = value;
                 }
             }
             
@@ -13638,14 +13638,14 @@ namespace LogProDesk {
             public int CreatedBy {
                 get {
                     try {
-                        return ((int)(this[this.tableMaritialStatus.CreatedByColumn]));
+                        return ((int)(this[this.tableMaritalStatus.CreatedByColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedBy\' in table \'MaritialStatus\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedBy\' in table \'MaritalStatus\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMaritialStatus.CreatedByColumn] = value;
+                    this[this.tableMaritalStatus.CreatedByColumn] = value;
                 }
             }
             
@@ -13654,14 +13654,14 @@ namespace LogProDesk {
             public bool IsDeleted {
                 get {
                     try {
-                        return ((bool)(this[this.tableMaritialStatus.IsDeletedColumn]));
+                        return ((bool)(this[this.tableMaritalStatus.IsDeletedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IsDeleted\' in table \'MaritialStatus\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsDeleted\' in table \'MaritalStatus\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMaritialStatus.IsDeletedColumn] = value;
+                    this[this.tableMaritalStatus.IsDeletedColumn] = value;
                 }
             }
             
@@ -13669,69 +13669,69 @@ namespace LogProDesk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EmployeeRow EmployeeRow {
                 get {
-                    return ((EmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK_MaritialStatus_Employee_CreateBy"])));
+                    return ((EmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK_MaritalStatus_Employee_CreateBy"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_MaritialStatus_Employee_CreateBy"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_MaritalStatus_Employee_CreateBy"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNameNull() {
-                return this.IsNull(this.tableMaritialStatus.NameColumn);
+                return this.IsNull(this.tableMaritalStatus.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNameNull() {
-                this[this.tableMaritialStatus.NameColumn] = global::System.Convert.DBNull;
+                this[this.tableMaritalStatus.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCreatedDateNull() {
-                return this.IsNull(this.tableMaritialStatus.CreatedDateColumn);
+                return this.IsNull(this.tableMaritalStatus.CreatedDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCreatedDateNull() {
-                this[this.tableMaritialStatus.CreatedDateColumn] = global::System.Convert.DBNull;
+                this[this.tableMaritalStatus.CreatedDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCreatedByNull() {
-                return this.IsNull(this.tableMaritialStatus.CreatedByColumn);
+                return this.IsNull(this.tableMaritalStatus.CreatedByColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCreatedByNull() {
-                this[this.tableMaritialStatus.CreatedByColumn] = global::System.Convert.DBNull;
+                this[this.tableMaritalStatus.CreatedByColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIsDeletedNull() {
-                return this.IsNull(this.tableMaritialStatus.IsDeletedColumn);
+                return this.IsNull(this.tableMaritalStatus.IsDeletedColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetIsDeletedNull() {
-                this[this.tableMaritialStatus.IsDeletedColumn] = global::System.Convert.DBNull;
+                this[this.tableMaritalStatus.IsDeletedColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public EmployeeRow[] GetEmployeeRows() {
-                if ((this.Table.ChildRelations["FK_Employee_MaritialStatus"] == null)) {
+                if ((this.Table.ChildRelations["FK_Employee_MaritalStatus"] == null)) {
                     return new EmployeeRow[0];
                 }
                 else {
-                    return ((EmployeeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Employee_MaritialStatus"])));
+                    return ((EmployeeRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Employee_MaritalStatus"])));
                 }
             }
         }
@@ -16654,22 +16654,22 @@ namespace LogProDesk {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class MaritialStatusRowChangeEvent : global::System.EventArgs {
+        public class MaritalStatusRowChangeEvent : global::System.EventArgs {
             
-            private MaritialStatusRow eventRow;
+            private MaritalStatusRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaritialStatusRowChangeEvent(MaritialStatusRow row, global::System.Data.DataRowAction action) {
+            public MaritalStatusRowChangeEvent(MaritalStatusRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MaritialStatusRow Row {
+            public MaritalStatusRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -24660,7 +24660,7 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM LeaveType WHERE (Id = @I
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class MaritialStatusTableAdapter : global::System.ComponentModel.Component {
+    public partial class MaritalStatusTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -24674,7 +24674,7 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM LeaveType WHERE (Id = @I
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public MaritialStatusTableAdapter() {
+        public MaritalStatusTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -24771,7 +24771,7 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM LeaveType WHERE (Id = @I
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "MaritialStatus";
+            tableMapping.DataSetTable = "MaritalStatus";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("CreatedDate", "CreatedDate");
@@ -24780,7 +24780,7 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM LeaveType WHERE (Id = @I
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[MaritialStatus] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_CreatedDate = 1 AND [CreatedDate] IS NULL) OR ([CreatedDate] = @Original_CreatedDate)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_IsDeleted = 1 AND [IsDeleted] IS NULL) OR ([IsDeleted] = @Original_IsDeleted)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[MaritalStatus] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_CreatedDate = 1 AND [CreatedDate] IS NULL) OR ([CreatedDate] = @Original_CreatedDate)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_IsDeleted = 1 AND [IsDeleted] IS NULL) OR ([IsDeleted] = @Original_IsDeleted)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -24793,9 +24793,9 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM LeaveType WHERE (Id = @I
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IsDeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDeleted", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[MaritialStatus] ([Name], [CreatedDate], [CreatedBy], [IsDelete" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[MaritalStatus] ([Name], [CreatedDate], [CreatedBy], [IsDelete" +
                 "d]) VALUES (@Name, @CreatedDate, @CreatedBy, @IsDeleted);\r\nSELECT Id, Name, Crea" +
-                "tedDate, CreatedBy, IsDeleted FROM MaritialStatus WHERE (Id = SCOPE_IDENTITY())";
+                "tedDate, CreatedBy, IsDeleted FROM MaritalStatus WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreatedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24803,8 +24803,8 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM LeaveType WHERE (Id = @I
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsDeleted", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IsDeleted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MaritialStatus] SET [Name] = @Name, [CreatedDate] = @CreatedDate, [CreatedBy] = @CreatedBy, [IsDeleted] = @IsDeleted WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_CreatedDate = 1 AND [CreatedDate] IS NULL) OR ([CreatedDate] = @Original_CreatedDate)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_IsDeleted = 1 AND [IsDeleted] IS NULL) OR ([IsDeleted] = @Original_IsDeleted)));
-SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM MaritialStatus WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MaritalStatus] SET [Name] = @Name, [CreatedDate] = @CreatedDate, [CreatedBy] = @CreatedBy, [IsDeleted] = @IsDeleted WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_CreatedDate = 1 AND [CreatedDate] IS NULL) OR ([CreatedDate] = @Original_CreatedDate)) AND ((@IsNull_CreatedBy = 1 AND [CreatedBy] IS NULL) OR ([CreatedBy] = @Original_CreatedBy)) AND ((@IsNull_IsDeleted = 1 AND [IsDeleted] IS NULL) OR ([IsDeleted] = @Original_IsDeleted)));
+SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM MaritalStatus WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreatedDate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CreatedDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24835,7 +24835,7 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM MaritialStatus WHERE (Id
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM dbo.MaritialStatus";
+            this._commandCollection[0].CommandText = "SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM dbo.MaritalStatus";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -24843,7 +24843,7 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM MaritialStatus WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LogProDeskDBDataSet.MaritialStatusDataTable dataTable) {
+        public virtual int Fill(LogProDeskDBDataSet.MaritalStatusDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -24856,9 +24856,9 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM MaritialStatus WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LogProDeskDBDataSet.MaritialStatusDataTable GetData() {
+        public virtual LogProDeskDBDataSet.MaritalStatusDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            LogProDeskDBDataSet.MaritialStatusDataTable dataTable = new LogProDeskDBDataSet.MaritialStatusDataTable();
+            LogProDeskDBDataSet.MaritalStatusDataTable dataTable = new LogProDeskDBDataSet.MaritalStatusDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -24866,7 +24866,7 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM MaritialStatus WHERE (Id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LogProDeskDBDataSet.MaritialStatusDataTable dataTable) {
+        public virtual int Update(LogProDeskDBDataSet.MaritalStatusDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -24874,7 +24874,7 @@ SELECT Id, Name, CreatedDate, CreatedBy, IsDeleted FROM MaritialStatus WHERE (Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(LogProDeskDBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "MaritialStatus");
+            return this.Adapter.Update(dataSet, "MaritalStatus");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -30932,7 +30932,7 @@ SELECT Id, UserName, Password, RoleID, IsSystemAdmin, CreatedDate, CreatedBy, Is
         
         private LeaveTypeTableAdapter _leaveTypeTableAdapter;
         
-        private MaritialStatusTableAdapter _maritialStatusTableAdapter;
+        private MaritalStatusTableAdapter _maritialStatusTableAdapter;
         
         private RoleTableAdapter _roleTableAdapter;
         
@@ -31140,7 +31140,7 @@ SELECT Id, UserName, Password, RoleID, IsSystemAdmin, CreatedDate, CreatedBy, Is
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public MaritialStatusTableAdapter MaritialStatusTableAdapter {
+        public MaritalStatusTableAdapter MaritalStatusTableAdapter {
             get {
                 return this._maritialStatusTableAdapter;
             }
@@ -31518,7 +31518,7 @@ SELECT Id, UserName, Password, RoleID, IsSystemAdmin, CreatedDate, CreatedBy, Is
                 }
             }
             if ((this._maritialStatusTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MaritialStatus.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                global::System.Data.DataRow[] updatedRows = dataSet.MaritalStatus.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
@@ -31724,7 +31724,7 @@ SELECT Id, UserName, Password, RoleID, IsSystemAdmin, CreatedDate, CreatedBy, Is
                 }
             }
             if ((this._maritialStatusTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MaritialStatus.Select(null, null, global::System.Data.DataViewRowState.Added);
+                global::System.Data.DataRow[] addedRows = dataSet.MaritalStatus.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._maritialStatusTableAdapter.Update(addedRows));
@@ -32004,7 +32004,7 @@ SELECT Id, UserName, Password, RoleID, IsSystemAdmin, CreatedDate, CreatedBy, Is
                 }
             }
             if ((this._maritialStatusTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MaritialStatus.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                global::System.Data.DataRow[] deletedRows = dataSet.MaritalStatus.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._maritialStatusTableAdapter.Update(deletedRows));

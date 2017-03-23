@@ -9,26 +9,37 @@ namespace LogProDesk.Entity
     [Table("Schedule")]
     public partial class Schedule
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Schedule()
+        {
+            ScheduleAssigns = new HashSet<ScheduleAssign>();
+        }
+
         public int Id { get; set; }
 
-        public int? ShiftID { get; set; }
+        public int ShifDetailID { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime? Date { get; set; }
+        public int TimeTableID { get; set; }
 
-        [StringLength(20)]
-        public string Day { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
-
-        public int? CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
 
         public DateTime? UpdatedDate { get; set; }
 
         public int? UpdatedBy { get; set; }
 
-        public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
 
-        public bool? IsActive { get; set; }
+        public virtual ShiftDetail ShiftDetail { get; set; }
+
+        public virtual TimeTable TimeTable { get; set; }
+
+        public virtual User User_CreatedBy { get; set; }
+
+        public virtual User User_UpdatedBy { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ScheduleAssign> ScheduleAssigns { get; set; }
     }
 }

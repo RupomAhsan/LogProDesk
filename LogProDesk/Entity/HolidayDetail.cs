@@ -9,7 +9,6 @@ namespace LogProDesk.Entity
     [Table("HolidayDetail")]
     public partial class HolidayDetail
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         public int HolidayID { get; set; }
@@ -17,7 +16,7 @@ namespace LogProDesk.Entity
         [Column(TypeName = "date")]
         public DateTime HolidayDate { get; set; }
 
-        public int? FinancialYear { get; set; }
+        public int FinancialYear { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -27,10 +26,14 @@ namespace LogProDesk.Entity
         [StringLength(50)]
         public string DaySequence { get; set; }
 
-        public int? CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
+
+        public virtual Holiday Holiday { get; set; }
+
+        public virtual User User_CreatedBy { get; set; }
     }
 }

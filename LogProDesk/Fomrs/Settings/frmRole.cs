@@ -1,4 +1,5 @@
 ﻿using LogProDesk.Entity;
+using LogProDesk.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,9 @@ using System.Windows.Forms;
 
 namespace LogProDesk.Fomrs.Settings
 {
-    public partial class frmRole : Form
+    public partial class frmRole : BaseForm
     {
         DBContext db;
-        string imagename;
-        int count = 0;
         public frmRole()
         {
             db = new DBContext();
@@ -41,7 +40,7 @@ namespace LogProDesk.Fomrs.Settings
         
         private void ltbRoleList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            count ++;
+           // count ++;
            // if(count!=1)
               //  GetData((Role)ltbRoleList.SelectedValue);
         }
@@ -81,6 +80,9 @@ namespace LogProDesk.Fomrs.Settings
                 aRole = LoadRoleData(aRole);
                 try
                 {
+                    aRole.CreatedBy = UserSessions.UserID;
+                    aRole.CreatedDate = DateTime.Now;
+                    aRole.IsDeleted = false;
                     db.Roles.Add(aRole);
                     var result = db.SaveChanges();
                     BindListBox();

@@ -16,6 +16,7 @@ namespace LogProDesk
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DialogResult result;
@@ -26,7 +27,7 @@ namespace LogProDesk
                 // login was successful
                 Application.Run(new Home());
             }
-           // Application.Run(new Home());
+            // Application.Run(new Home());
         }
     }
 }

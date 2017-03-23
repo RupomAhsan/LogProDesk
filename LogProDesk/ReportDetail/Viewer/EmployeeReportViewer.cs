@@ -35,10 +35,10 @@ namespace LogProDesk.ReportDetail.Viewer
                            from edg1 in edg.DefaultIfEmpty()
                            join education in db.Educations on employee.EducationID equals education.Id into ee
                            from ee1 in ee.DefaultIfEmpty()
-                           join maritialStatus in db.MaritialStatus on employee.MaritualStatusID equals maritialStatus.Id into em
+                           join maritialStatus in db.MaritalStatus on employee.MaritalStatusID equals maritialStatus.Id into em
                            from em1 in em.DefaultIfEmpty()
-                           join role in db.Roles on employee.RoleID equals role.Id into er
-                           from er1 in er.DefaultIfEmpty()
+                           //join role in db.Roles on employee.RoleID equals role.Id into er
+                           //from er1 in er.DefaultIfEmpty()
                            join sex in db.Sexes on employee.SexID equals sex.Id into es
                            from es1 in es.DefaultIfEmpty()
                            where employee.IsDeleted == false
@@ -51,8 +51,8 @@ namespace LogProDesk.ReportDetail.Viewer
                                Department = ed1.Name,
                                EmployeeNo=employee.EmployeeNo,
                                FullName=employee.FullName,
-                               UserName=employee.UserName,
-                               Role = er1.Name,
+                               //UserName=employee.UserName,
+                               //Role = er1.Name,
                                JoinDate=employee.JoinDate,
                                Designation = edg1.Name,
                                Education = ee1.Name,

@@ -1,4 +1,5 @@
 ﻿using LogProDesk.Entity;
+using LogProDesk.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace LogProDesk.Fomrs.Settings
 {
-    public partial class frmDesignation : Form
+    public partial class frmDesignation : BaseForm
     {
         DBContext db;
         string imagename;
@@ -81,6 +82,9 @@ namespace LogProDesk.Fomrs.Settings
                 aDesignation = LoadDesignationData(aDesignation);
                 try
                 {
+                    aDesignation.CreatedBy = UserSessions.UserID;
+                    aDesignation.CreatedDate = DateTime.Now;
+                    aDesignation.IsDeleted = false;
                     db.Designations.Add(aDesignation);
                     var result = db.SaveChanges();
                     BindListBox();

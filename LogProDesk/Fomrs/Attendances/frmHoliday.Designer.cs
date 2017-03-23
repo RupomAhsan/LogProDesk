@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblHolidayID = new System.Windows.Forms.Label();
-            this.dgvHolidayDetail = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.nmrTotalDays = new System.Windows.Forms.NumericUpDown();
             this.dtpStartingDate = new System.Windows.Forms.DateTimePicker();
             this.label29 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -53,6 +45,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.cboDepartment = new System.Windows.Forms.ComboBox();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.cboBranch = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -61,103 +54,30 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHolidayDetail)).BeginInit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnExportToExcel = new System.Windows.Forms.Button();
+            this.lblHolidayID = new System.Windows.Forms.Label();
+            this.dgvHolidayDetail = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrTotalDays)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHolidayDetail)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.dtpFrom);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.dtpTo);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.lblHolidayID);
-            this.groupBox2.Controls.Add(this.dgvHolidayDetail);
-            this.groupBox2.Controls.Add(this.btnSearch);
-            this.groupBox2.Location = new System.Drawing.Point(12, 207);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(774, 308);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Holiday List";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 20);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 13);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "From";
-            // 
-            // dtpFrom
-            // 
-            this.dtpFrom.Location = new System.Drawing.Point(48, 15);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(181, 20);
-            this.dtpFrom.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(290, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 13);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "To";
-            // 
-            // dtpTo
-            // 
-            this.dtpTo.Location = new System.Drawing.Point(326, 15);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(181, 20);
-            this.dtpTo.TabIndex = 17;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(326, 15);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
-            this.dateTimePicker1.TabIndex = 17;
-            // 
-            // lblHolidayID
-            // 
-            this.lblHolidayID.AutoSize = true;
-            this.lblHolidayID.Location = new System.Drawing.Point(6, 20);
-            this.lblHolidayID.Name = "lblHolidayID";
-            this.lblHolidayID.Size = new System.Drawing.Size(0, 13);
-            this.lblHolidayID.TabIndex = 15;
-            this.lblHolidayID.Visible = false;
-            // 
-            // dgvHolidayDetail
-            // 
-            this.dgvHolidayDetail.AllowUserToAddRows = false;
-            this.dgvHolidayDetail.AllowUserToDeleteRows = false;
-            this.dgvHolidayDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHolidayDetail.Location = new System.Drawing.Point(15, 44);
-            this.dgvHolidayDetail.Name = "dgvHolidayDetail";
-            this.dgvHolidayDetail.ReadOnly = true;
-            this.dgvHolidayDetail.Size = new System.Drawing.Size(743, 258);
-            this.dgvHolidayDetail.TabIndex = 11;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(578, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 14;
-            this.btnSearch.Text = "S&earch";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.nmrTotalDays);
             this.groupBox1.Controls.Add(this.dtpStartingDate);
             this.groupBox1.Controls.Add(this.label29);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label26);
@@ -170,6 +90,7 @@
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.btnAddNew);
             this.groupBox1.Controls.Add(this.btnClear);
+            this.groupBox1.Controls.Add(this.cboDepartment);
             this.groupBox1.Controls.Add(this.cboStatus);
             this.groupBox1.Controls.Add(this.cboBranch);
             this.groupBox1.Controls.Add(this.txtName);
@@ -178,16 +99,17 @@
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(774, 189);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.Size = new System.Drawing.Size(774, 170);
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Holiday Information";
             // 
             // nmrTotalDays
             // 
-            this.nmrTotalDays.Location = new System.Drawing.Point(500, 65);
+            this.nmrTotalDays.Location = new System.Drawing.Point(496, 67);
             this.nmrTotalDays.Maximum = new decimal(new int[] {
             365,
             0,
@@ -209,7 +131,7 @@
             // 
             // dtpStartingDate
             // 
-            this.dtpStartingDate.Location = new System.Drawing.Point(500, 39);
+            this.dtpStartingDate.Location = new System.Drawing.Point(496, 40);
             this.dtpStartingDate.Name = "dtpStartingDate";
             this.dtpStartingDate.Size = new System.Drawing.Size(198, 20);
             this.dtpStartingDate.TabIndex = 66;
@@ -224,12 +146,23 @@
             this.label29.TabIndex = 65;
             this.label29.Text = "Required Fields(*)";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(620, 67);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 20);
+            this.label9.TabIndex = 64;
+            this.label9.Text = "*";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(626, 63);
+            this.label7.Location = new System.Drawing.Point(694, 39);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 20);
             this.label7.TabIndex = 64;
@@ -240,7 +173,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(698, 38);
+            this.label6.Location = new System.Drawing.Point(322, 41);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 20);
             this.label6.TabIndex = 64;
@@ -251,7 +184,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(322, 97);
+            this.label26.Location = new System.Drawing.Point(694, 92);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(16, 20);
             this.label26.TabIndex = 64;
@@ -262,7 +195,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(322, 42);
+            this.label21.Location = new System.Drawing.Point(322, 92);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(16, 20);
             this.label21.TabIndex = 59;
@@ -311,7 +244,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(490, 154);
+            this.btnDelete.Location = new System.Drawing.Point(490, 132);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 51;
@@ -321,7 +254,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(409, 154);
+            this.btnUpdate.Location = new System.Drawing.Point(409, 132);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 50;
@@ -331,7 +264,7 @@
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(328, 154);
+            this.btnAddNew.Location = new System.Drawing.Point(328, 132);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(75, 23);
             this.btnAddNew.TabIndex = 49;
@@ -341,7 +274,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(247, 154);
+            this.btnClear.Location = new System.Drawing.Point(247, 132);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 48;
@@ -349,10 +282,18 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // cboDepartment
+            // 
+            this.cboDepartment.FormattingEnabled = true;
+            this.cboDepartment.Location = new System.Drawing.Point(124, 92);
+            this.cboDepartment.Name = "cboDepartment";
+            this.cboDepartment.Size = new System.Drawing.Size(198, 21);
+            this.cboDepartment.TabIndex = 46;
+            // 
             // cboStatus
             // 
             this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(124, 97);
+            this.cboStatus.Location = new System.Drawing.Point(496, 92);
             this.cboStatus.Name = "cboStatus";
             this.cboStatus.Size = new System.Drawing.Size(198, 21);
             this.cboStatus.TabIndex = 45;
@@ -361,7 +302,7 @@
             // 
             this.cboBranch.DisplayMember = "Id";
             this.cboBranch.FormattingEnabled = true;
-            this.cboBranch.Location = new System.Drawing.Point(124, 70);
+            this.cboBranch.Location = new System.Drawing.Point(124, 67);
             this.cboBranch.Name = "cboBranch";
             this.cboBranch.Size = new System.Drawing.Size(198, 21);
             this.cboBranch.TabIndex = 41;
@@ -377,7 +318,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(6, 97);
+            this.label19.Location = new System.Drawing.Point(378, 95);
             this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(46, 13);
@@ -387,7 +328,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(371, 70);
+            this.label1.Location = new System.Drawing.Point(378, 69);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
@@ -397,7 +338,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(371, 42);
+            this.label18.Location = new System.Drawing.Point(378, 41);
             this.label18.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(81, 13);
@@ -417,49 +358,147 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 42);
+            this.label8.Location = new System.Drawing.Point(6, 45);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 31;
             this.label8.Text = "Name : ";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 95);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Department : ";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.dtpFrom);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.dtpTo);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.btnExportToExcel);
+            this.groupBox2.Controls.Add(this.lblHolidayID);
+            this.groupBox2.Controls.Add(this.dgvHolidayDetail);
+            this.groupBox2.Controls.Add(this.btnSearch);
+            this.groupBox2.Location = new System.Drawing.Point(12, 188);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(774, 335);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Holiday List";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "From";
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Location = new System.Drawing.Point(48, 16);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(181, 20);
+            this.dtpFrom.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(290, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "To";
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Location = new System.Drawing.Point(326, 16);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(181, 20);
+            this.dtpTo.TabIndex = 17;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(326, 16);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
+            this.dateTimePicker1.TabIndex = 17;
+            // 
+            // btnExportToExcel
+            // 
+            this.btnExportToExcel.Location = new System.Drawing.Point(659, 16);
+            this.btnExportToExcel.Name = "btnExportToExcel";
+            this.btnExportToExcel.Size = new System.Drawing.Size(99, 23);
+            this.btnExportToExcel.TabIndex = 16;
+            this.btnExportToExcel.Text = "E&xport to Excel";
+            this.btnExportToExcel.UseVisualStyleBackColor = true;
+            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
+            // 
+            // lblHolidayID
+            // 
+            this.lblHolidayID.AutoSize = true;
+            this.lblHolidayID.Location = new System.Drawing.Point(6, 20);
+            this.lblHolidayID.Name = "lblHolidayID";
+            this.lblHolidayID.Size = new System.Drawing.Size(0, 13);
+            this.lblHolidayID.TabIndex = 15;
+            this.lblHolidayID.Visible = false;
+            // 
+            // dgvHolidayDetail
+            // 
+            this.dgvHolidayDetail.AllowUserToAddRows = false;
+            this.dgvHolidayDetail.AllowUserToDeleteRows = false;
+            this.dgvHolidayDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHolidayDetail.Location = new System.Drawing.Point(15, 44);
+            this.dgvHolidayDetail.Name = "dgvHolidayDetail";
+            this.dgvHolidayDetail.ReadOnly = true;
+            this.dgvHolidayDetail.Size = new System.Drawing.Size(743, 285);
+            this.dgvHolidayDetail.TabIndex = 11;
+            this.dgvHolidayDetail.SelectionChanged += new System.EventHandler(this.dgvHolidayDetail_SelectionChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(578, 16);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 14;
+            this.btnSearch.Text = "S&earch";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // frmHoliday
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 517);
+            this.ClientSize = new System.Drawing.Size(796, 529);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmHoliday";
-            this.Text = "frmHoliday";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHolidayDetail)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Settings: Holiday";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrTotalDays)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHolidayDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dtpFrom;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dtpTo;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label lblHolidayID;
-        private System.Windows.Forms.DataGridView dgvHolidayDetail;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.NumericUpDown nmrTotalDays;
         private System.Windows.Forms.DateTimePicker dtpStartingDate;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
@@ -470,13 +509,29 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ComboBox cboDepartment;
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.ComboBox cboBranch;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown nmrTotalDays;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnExportToExcel;
+        private System.Windows.Forms.Label lblHolidayID;
+        private System.Windows.Forms.DataGridView dgvHolidayDetail;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtpFrom;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dtpTo;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

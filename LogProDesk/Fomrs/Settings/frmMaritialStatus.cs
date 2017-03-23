@@ -1,4 +1,5 @@
 ﻿using LogProDesk.Entity;
+using LogProDesk.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,62 +15,60 @@ using System.Windows.Forms;
 
 namespace LogProDesk.Fomrs.Settings
 {
-    public partial class frmMaritialStatus : Form
+    public partial class frmMaritalStatus : BaseForm
     {
         DBContext db;
-        string imagename;
-        int count = 0;
-        public frmMaritialStatus()
+        public frmMaritalStatus()
         {
             db = new DBContext();
             InitializeComponent();
-            lblTitle.Text = "MaritialStatus";
+            lblTitle.Text = "MaritalStatus";
             BindListBox();            
         }
 
         private void BindListBox()
         {
-            List<MaritialStatu> departmentList = new List<MaritialStatu> { new MaritialStatu { Id = 0, Name = "--Please Select--" } };
-            foreach (var item in db.MaritialStatus.ToList().OrderBy(o => o.Name).Where(x => x.IsDeleted == false))
+            List<MaritalStatu> departmentList = new List<MaritalStatu> { new MaritalStatu { Id = 0, Name = "--Please Select--" } };
+            foreach (var item in db.MaritalStatus.ToList().OrderBy(o => o.Name).Where(x => x.IsDeleted == false))
             {
                 departmentList.Add(item);
             }
-            ltbMaritialStatusList.DataSource = departmentList;
-            ltbMaritialStatusList.ValueMember = "id";
-            ltbMaritialStatusList.DisplayMember = "name";
+            ltbMaritalStatusList.DataSource = departmentList;
+            ltbMaritalStatusList.ValueMember = "id";
+            ltbMaritalStatusList.DisplayMember = "name";
         }
         
-        private void ltbMaritialStatusList_SelectedIndexChanged(object sender, EventArgs e)
+        private void ltbMaritalStatusList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            count ++;
+            //count ++;
            // if(count!=1)
-              //  GetData((MaritialStatus)ltbMaritialStatusList.SelectedValue);
+              //  GetData((MaritalStatus)ltbMaritalStatusList.SelectedValue);
         }
 
         private void GetData(object selectedValue)
         {
             int ID = Convert.ToInt32(selectedValue);
-            MaritialStatu aMaritialStatus = new MaritialStatu();
+            MaritalStatu aMaritalStatus = new MaritalStatu();
             if (ID!=0)
-                aMaritialStatus = db.MaritialStatus.OrderBy(o => o.Name).Where(x => x.IsDeleted == false&&x.Id== ID ).FirstOrDefault();
+                aMaritalStatus = db.MaritalStatus.OrderBy(o => o.Name).Where(x => x.IsDeleted == false&&x.Id== ID ).FirstOrDefault();
 
-            PopulateFormData(aMaritialStatus);
+            PopulateFormData(aMaritalStatus);
         }
 
-        private void PopulateFormData(MaritialStatu aMaritialStatus)
+        private void PopulateFormData(MaritalStatu aMaritalStatus)
         {
-            lblID.Text = aMaritialStatus.Id.ToString();
-            txtName.Text= aMaritialStatus.Name;
+            lblID.Text = aMaritalStatus.Id.ToString();
+            txtName.Text= aMaritalStatus.Name;
         }
 
-        private void ltbMaritialStatusList_Click(object sender, EventArgs e)
+        private void ltbMaritalStatusList_Click(object sender, EventArgs e)
         {
-            GetData(ltbMaritialStatusList.SelectedValue);
+            GetData(ltbMaritalStatusList.SelectedValue);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            PopulateFormData(new MaritialStatu());
+            PopulateFormData(new MaritalStatu());
             lblID.Text = "";
         }
 
@@ -77,11 +76,14 @@ namespace LogProDesk.Fomrs.Settings
         {
             if (CheckValidation())
             {
-                MaritialStatu aMaritialStatus = new MaritialStatu();
-                aMaritialStatus = LoadMaritialStatusData(aMaritialStatus);
+                MaritalStatu aMaritalStatus = new MaritalStatu();
+                aMaritalStatus = LoadMaritalStatusData(aMaritalStatus);
                 try
                 {
-                    db.MaritialStatus.Add(aMaritialStatus);
+                    aMaritalStatus.CreatedBy = UserSessions.UserID;
+                    aMaritalStatus.CreatedDate = DateTime.Now;
+                    aMaritalStatus.IsDeleted = false;
+                    db.MaritalStatus.Add(aMaritalStatus);
                     var result = db.SaveChanges();
                     BindListBox();
                     MessageBox.Show("Record Inserted Successfully");
@@ -93,11 +95,11 @@ namespace LogProDesk.Fomrs.Settings
             }
         }
 
-        private MaritialStatu LoadMaritialStatusData(MaritialStatu aMaritialStatus)
+        private MaritalStatu LoadMaritalStatusData(MaritalStatu aMaritalStatus)
         {
-            aMaritialStatus.Name = txtName.Text;
-            aMaritialStatus.IsDeleted = false;          
-            return aMaritialStatus;
+            aMaritalStatus.Name = txtName.Text;
+            aMaritalStatus.IsDeleted = false;          
+            return aMaritalStatus;
         }
 
         private bool CheckValidation(bool isUpdate = false, int? ID = null)
@@ -120,7 +122,7 @@ namespace LogProDesk.Fomrs.Settings
                 {
                     if (!isUpdate)
                     {
-                        var result = from data in db.MaritialStatus
+                        var result = from data in db.MaritalStatus
                                     where data.Name == txtName.Text.Trim().ToString() && data.IsDeleted != true
                                     select data;
 
@@ -131,7 +133,7 @@ namespace LogProDesk.Fomrs.Settings
                     }
                     else
                     {
-                        var result = from data in db.MaritialStatus
+                        var result = from data in db.MaritalStatus
                                      where data.Name == txtName.Text.Trim().ToString() && data.IsDeleted != true && data.Id != ID
                                     select data;
 
@@ -170,11 +172,11 @@ namespace LogProDesk.Fomrs.Settings
 
                 try
                 {
-                    MaritialStatu aMaritialStatus = db.MaritialStatus.Where(x => x.Id == id).FirstOrDefault();
-                    aMaritialStatus = LoadMaritialStatusData(aMaritialStatus);
-                    //aMaritialStatus.UpdatedDate = DateTime.Now;
-                    db.MaritialStatus.Attach(aMaritialStatus);
-                    db.Entry(aMaritialStatus).State = EntityState.Modified;
+                    MaritalStatu aMaritalStatus = db.MaritalStatus.Where(x => x.Id == id).FirstOrDefault();
+                    aMaritalStatus = LoadMaritalStatusData(aMaritalStatus);
+                    //aMaritalStatus.UpdatedDate = DateTime.Now;
+                    db.MaritalStatus.Attach(aMaritalStatus);
+                    db.Entry(aMaritalStatus).State = EntityState.Modified;
                     // db.Employees.Add(anEmployee);
                     var result = db.SaveChanges();
                     BindListBox();
@@ -196,12 +198,12 @@ namespace LogProDesk.Fomrs.Settings
                 return;
             try
                 {
-                    MaritialStatu aMaritialStatus = db.MaritialStatus.Where(x => x.Id == id).FirstOrDefault();
-                    //aMaritialStatus = LoadMaritialStatusData(aMaritialStatus);
-                    //aMaritialStatus.UpdatedDate = DateTime.Now;
-                    aMaritialStatus.IsDeleted = true;
-                    db.MaritialStatus.Attach(aMaritialStatus);
-                    db.Entry(aMaritialStatus).State = EntityState.Modified;
+                    MaritalStatu aMaritalStatus = db.MaritalStatus.Where(x => x.Id == id).FirstOrDefault();
+                    //aMaritalStatus = LoadMaritalStatusData(aMaritalStatus);
+                    //aMaritalStatus.UpdatedDate = DateTime.Now;
+                    aMaritalStatus.IsDeleted = true;
+                    db.MaritalStatus.Attach(aMaritalStatus);
+                    db.Entry(aMaritalStatus).State = EntityState.Modified;
                     // db.Employees.Add(anEmployee);
                     var result = db.SaveChanges();
                     BindListBox();

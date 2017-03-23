@@ -1,4 +1,5 @@
 ﻿using LogProDesk.Entity;
+using LogProDesk.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,16 +12,16 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace LogProDesk
+namespace LogProDesk.Fomrs.Settings
 {
-    public partial class EmployeeInfo : Form
+    public partial class frmEmployee : BaseForm
     {
         DBContext db;
         string imagename;
-        public EmployeeInfo()
+        public frmEmployee()
         {
             InitializeComponent();
-            txtPassword.PasswordChar = '*';
+            //txtPassword.PasswordChar = '*';
             db = new DBContext();
             PupulateDorpDownData();
             PopulateEmployeeGrid();
@@ -53,10 +54,10 @@ namespace LogProDesk
                           from edg1 in edg.DefaultIfEmpty()
                           join education in db.Educations on employee.EducationID equals education.Id into ee
                           from ee1 in ee.DefaultIfEmpty()
-                          join maritialStatus in db.MaritialStatus on employee.MaritualStatusID equals maritialStatus.Id into em
+                          join maritialStatus in db.MaritalStatus on employee.MaritalStatusID equals maritialStatus.Id into em
                           from em1 in em.DefaultIfEmpty()
-                          join role in db.Roles on employee.RoleID equals role.Id into er
-                          from er1 in er.DefaultIfEmpty()
+                          //join role in db.Roles on employee.RoleID equals role.Id into er
+                          //from er1 in er.DefaultIfEmpty()
                           join sex in db.Sexes on employee.SexID equals sex.Id into es
                           from es1 in es.DefaultIfEmpty()
                           where employee.IsDeleted==false 
@@ -69,15 +70,15 @@ namespace LogProDesk
                               DepartmentName=ed1.Name,
                               employee.EmployeeNo,
                               employee.FullName,
-                              employee.UserName,
-                              Role = er1.Name,
+                              //employee.UserName,
+                              //Role = er1.Name,
                               employee.JoinDate,
                               Designation =edg1.Name,
                               Education= ee1.Name,
                               employee.DOB,
                               employee.EmailAddress,
                               employee.MobileNumber,
-                              MaritialStatus = em1.Name,
+                              MaritalStatus = em1.Name,
                               Gender= es1.Name,
                               Status = employee.IsActive == true ? "Active" : "Inactive",
                               Photo=employee.Photo
@@ -91,10 +92,9 @@ namespace LogProDesk
             PupulateCompanyDDL();
             PupulateBranchDDL();
             PupulateDepartmentDDL();
-            PupulateRoleDDL();
             PupulateDesignationDDL();
             PupulateEducationDDL();
-            PupulateMaritialStatusDDL();
+            PupulateMaritalStatusDDL();
             PupulateSexDDL();
             PupulateStatusDDL();
         }
@@ -132,17 +132,7 @@ namespace LogProDesk
             cboDepartment.ValueMember = "id";
             cboDepartment.DisplayMember = "name";
         }
-        private void PupulateRoleDDL()
-        {
-            List<Role> roleList = new List<Role> { new Role { Id = 0, Name = "--Please Select--" } };
-            foreach (var item in db.Roles.ToList().OrderBy(o => o.Name).Where(x => x.IsDeleted == false))
-            {
-                roleList.Add(item);
-            }
-            cboRole.DataSource = roleList;
-            cboRole.ValueMember = "id";
-            cboRole.DisplayMember = "name";
-        }
+        
         private void PupulateDesignationDDL()
         {
             List<Designation> designationList = new List<Designation> { new Designation { Id = 0, Name = "--Please Select--" } };
@@ -165,16 +155,16 @@ namespace LogProDesk
             cboEducation.ValueMember = "id";
             cboEducation.DisplayMember = "name";
         }
-        private void PupulateMaritialStatusDDL()
+        private void PupulateMaritalStatusDDL()
         {
-            List<MaritialStatu> maritialStatusList = new List<MaritialStatu> { new MaritialStatu { Id = 0, Name = "--Please Select--" } };
-            foreach (var item in db.MaritialStatus.ToList().OrderBy(o => o.Name).Where(x => x.IsDeleted == false))
+            List<MaritalStatu> maritialStatusList = new List<MaritalStatu> { new MaritalStatu { Id = 0, Name = "--Please Select--" } };
+            foreach (var item in db.MaritalStatus.ToList().OrderBy(o => o.Name).Where(x => x.IsDeleted == false))
             {
                 maritialStatusList.Add(item);
             }
-            cboMaritialStatus.DataSource = maritialStatusList;
-            cboMaritialStatus.ValueMember = "id";
-            cboMaritialStatus.DisplayMember = "name";
+            cboMaritalStatus.DataSource = maritialStatusList;
+            cboMaritalStatus.ValueMember = "id";
+            cboMaritalStatus.DisplayMember = "name";
         }
         private void PupulateSexDDL()
         {
@@ -302,55 +292,55 @@ namespace LogProDesk
                 
             }
 
-            //Check UserName Data
-            if (String.IsNullOrEmpty(txtUserName.Text.Trim()))
-            {
-                errorMessage += "User Name Required. ";
-            }
-            else
-            {
-                Regex rgx = new Regex("^[a-zA-Z0-9]+$");
-                if (!rgx.IsMatch(txtUserName.Text.Trim()))
-                {
-                    errorMessage += "Invalid User Name. ";
-                }
-                else
-                {
-                    if (!isUpdate)
-                    {
-                        var empNo = from data in db.Employees
-                                    where data.UserName == txtEmployeeNo.Text.Trim().ToString() && data.IsDeleted != true
-                                    select data;
+            ////Check UserName Data
+            //if (String.IsNullOrEmpty(txtUserName.Text.Trim()))
+            //{
+            //    errorMessage += "User Name Required. ";
+            //}
+            //else
+            //{
+            //    Regex rgx = new Regex("^[a-zA-Z0-9]+$");
+            //    if (!rgx.IsMatch(txtUserName.Text.Trim()))
+            //    {
+            //        errorMessage += "Invalid User Name. ";
+            //    }
+            //    else
+            //    {
+            //        if (!isUpdate)
+            //        {
+            //            var empNo = from data in db.Employees
+            //                        where data.UserName == txtEmployeeNo.Text.Trim().ToString() && data.IsDeleted != true
+            //                        select data;
 
-                        if (empNo.Any())
-                        {
-                            errorMessage += "User Name already Exists. ";
-                        }
-                    }
-                    else
-                    {
-                        var empNo = from data in db.Employees
-                                    where data.UserName == txtEmployeeNo.Text.Trim().ToString() && data.IsDeleted != true && data.Id != employeeID
-                                    select data;
+            //            if (empNo.Any())
+            //            {
+            //                errorMessage += "User Name already Exists. ";
+            //            }
+            //        }
+            //        else
+            //        {
+            //            var empNo = from data in db.Employees
+            //                        where data.UserName == txtEmployeeNo.Text.Trim().ToString() && data.IsDeleted != true && data.Id != employeeID
+            //                        select data;
 
-                        if (empNo.Any())
-                        {
-                            errorMessage += "User Name already Exists. ";
-                        }
-                    }
-                }
-            }
+            //            if (empNo.Any())
+            //            {
+            //                errorMessage += "User Name already Exists. ";
+            //            }
+            //        }
+            //    }
+            //}
             
-            //Check Password Data
-            if (String.IsNullOrEmpty(txtPassword.Text.Trim()))
-            {
-                errorMessage += "Password Required. ";
-            }
-            //Check Role Data
-            if (Convert.ToInt32(cboRole.SelectedValue) == 0)
-            {
-                errorMessage += "Role Required. ";
-            }
+            ////Check Password Data
+            //if (String.IsNullOrEmpty(txtPassword.Text.Trim()))
+            //{
+            //    errorMessage += "Password Required. ";
+            //}
+            ////Check Role Data
+            //if (Convert.ToInt32(cboRole.SelectedValue) == 0)
+            //{
+            //    errorMessage += "Role Required. ";
+            //}
 
             
 
@@ -376,9 +366,9 @@ namespace LogProDesk
             anEmployee.DepartmentID = Convert.ToInt32(cboDepartment.SelectedValue);
             anEmployee.EmployeeNo = txtEmployeeNo.Text.Trim();
             anEmployee.FullName = txtFullName.Text.Trim();
-            anEmployee.UserName = txtUserName.Text.Trim();
-            anEmployee.Password = txtPassword.Text.Trim();
-            anEmployee.RoleID = Convert.ToInt32(cboRole.SelectedValue);
+            //anEmployee.UserName = txtUserName.Text.Trim();
+            //anEmployee.Password = txtPassword.Text.Trim();
+            //anEmployee.RoleID = Convert.ToInt32(cboRole.SelectedValue);
             if (dtpJoinDate.Value != null)
                 anEmployee.JoinDate = dtpJoinDate.Value;
             if (dtpDoB.Value != null)
@@ -387,7 +377,7 @@ namespace LogProDesk
             anEmployee.EmailAddress = txtEmailAddress.Text.Trim();
             anEmployee.DesignationID = Convert.ToInt32(cboDesignation.SelectedValue);
             anEmployee.EducationID = Convert.ToInt32(cboEducation.SelectedValue);
-            anEmployee.MaritualStatusID = Convert.ToInt32(cboMaritialStatus.SelectedValue);
+            anEmployee.MaritalStatusID = Convert.ToInt32(cboMaritalStatus.SelectedValue);
             anEmployee.SexID = Convert.ToInt32(cboSex.SelectedValue);
             anEmployee.IsActive = Convert.ToBoolean(cboStatus.SelectedValue);
             if (!String.IsNullOrEmpty(imagename))
@@ -447,15 +437,15 @@ namespace LogProDesk
 
             txtEmployeeNo.Text = employee.EmployeeNo;
             txtFullName.Text = employee.FullName;
-            txtUserName.Text = employee.UserName;
-            txtPassword.Text = employee.Password;
+            //txtUserName.Text = employee.UserName;
+            //txtPassword.Text = employee.Password;
             txtEmailAddress.Text = employee.EmailAddress;
             dtpDoB.Text = employee.DOB.ToString();
             dtpJoinDate.Text = employee.JoinDate.ToString(); 
-            cboRole.SelectedValue = employee.RoleID == null ? 0 : employee.RoleID;
+            //cboRole.SelectedValue = employee.RoleID == null ? 0 : employee.RoleID;
             cboDesignation.SelectedValue  = employee.DesignationID == null ? 0 : employee.DesignationID;
             cboEducation.SelectedValue = employee.EducationID == null ? 0 : employee.EducationID;
-            cboMaritialStatus.SelectedValue = employee.MaritualStatusID == null ? 0 : employee.MaritualStatusID;
+            cboMaritalStatus.SelectedValue = employee.MaritalStatusID == null ? 0 : employee.MaritalStatusID;
             cboSex.SelectedValue = employee.SexID == null ? 0 : employee.SexID;
             cboStatus.SelectedValue = employee.IsActive == null ? 0 : Convert.ToInt32(employee.IsActive);
 
@@ -486,10 +476,10 @@ namespace LogProDesk
                            from edg1 in edg.DefaultIfEmpty()
                            join education in db.Educations on employee.EducationID equals education.Id into ee
                            from ee1 in ee.DefaultIfEmpty()
-                           join maritialStatus in db.MaritialStatus on employee.MaritualStatusID equals maritialStatus.Id into em
+                           join maritialStatus in db.MaritalStatus on employee.MaritalStatusID equals maritialStatus.Id into em
                            from em1 in em.DefaultIfEmpty()
-                           join role in db.Roles on employee.RoleID equals role.Id into er
-                           from er1 in er.DefaultIfEmpty()
+                           //join role in db.Roles on employee.RoleID equals role.Id into er
+                           //from er1 in er.DefaultIfEmpty()
                            join sex in db.Sexes on employee.SexID equals sex.Id into es
                            from es1 in es.DefaultIfEmpty()
                            where employee.IsDeleted == false && (employee.FullName.Contains(txtSearchText.Text.Trim()) || employee.FullName.Contains(txtSearchText.Text.Trim()))
@@ -502,15 +492,15 @@ namespace LogProDesk
                                DepartmentName = ed1.Name,
                                employee.EmployeeNo,
                                employee.FullName,
-                               employee.UserName,
-                               Role = er1.Name,
+                               //employee.UserName,
+                               //Role = er1.Name,
                                employee.JoinDate,
                                Designation = edg1.Name,
                                Education = ee1.Name,
                                employee.DOB,
                                employee.EmailAddress,
                                employee.MobileNumber,
-                               MaritialStatus = em1.Name,
+                               MaritalStatus = em1.Name,
                                Gender = es1.Name,
                                Status = employee.IsActive == true ? "Active" : "Inactive",
                                Photo = employee.Photo
@@ -539,7 +529,7 @@ namespace LogProDesk
                 {
                     Employee anEmployee = db.Employees.Where(x => x.Id == id).FirstOrDefault();
                     anEmployee = LoadEmployeeData(anEmployee);
-                    anEmployee.LastUpdateDate = DateTime.Now;
+                    anEmployee.UpdatedDate = DateTime.Now;
                     db.Employees.Attach(anEmployee);
                     db.Entry(anEmployee).State = EntityState.Modified;
                     // db.Employees.Add(anEmployee);
@@ -568,7 +558,7 @@ namespace LogProDesk
                 // anEmployee = LoadEmployeeData(anEmployee);
                 anEmployee.IsDeleted = true;
                 anEmployee.IsActive = false;
-                anEmployee.LastUpdateDate = DateTime.Now;
+                anEmployee.UpdatedDate = DateTime.Now;
                 db.Employees.Attach(anEmployee);
                 db.Entry(anEmployee).State = EntityState.Modified;
                 // db.Employees.Add(anEmployee);

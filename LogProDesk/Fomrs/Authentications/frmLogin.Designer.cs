@@ -30,21 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.cboCompany = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.btnLogin);
@@ -60,56 +61,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Please Enter your Username and Password";
-            // 
-            // cboCompany
-            // 
-            this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(80, 40);
-            this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(167, 21);
-            this.cboCompany.TabIndex = 36;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 40);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Copmany : ";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(80, 91);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(167, 20);
-            this.txtPassword.TabIndex = 1;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(80, 67);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(167, 20);
-            this.txtUserName.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Password: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User Name: ";
             // 
             // pictureBox1
             // 
@@ -134,15 +85,66 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.Image = global::LogProDesk.Properties.Resources.login_btn;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Location = new System.Drawing.Point(80, 135);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 37;
+            this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Log in";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // cboCompany
+            // 
+            this.cboCompany.FormattingEnabled = true;
+            this.cboCompany.Location = new System.Drawing.Point(80, 40);
+            this.cboCompany.Name = "cboCompany";
+            this.cboCompany.Size = new System.Drawing.Size(167, 21);
+            this.cboCompany.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 40);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Copmany : ";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(80, 91);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(167, 20);
+            this.txtPassword.TabIndex = 3;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(80, 67);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(167, 20);
+            this.txtUserName.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Password: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "User Name: ";
             // 
             // frmLogin
             // 

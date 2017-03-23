@@ -1,6 +1,6 @@
 ﻿namespace LogProDesk.Fomrs.Settings
 {
-    partial class frmMaritialStatus
+    partial class frmMaritalStatus
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ltbMaritialStatusList = new System.Windows.Forms.ListBox();
+            this.ltbMaritalStatusList = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblID = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ltbMaritialStatusList);
+            this.groupBox1.Controls.Add(this.ltbMaritalStatusList);
             this.groupBox1.Location = new System.Drawing.Point(13, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(216, 208);
@@ -57,15 +57,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lists";
             // 
-            // ltbMaritialStatusList
+            // ltbMaritalStatusList
             // 
-            this.ltbMaritialStatusList.FormattingEnabled = true;
-            this.ltbMaritialStatusList.Location = new System.Drawing.Point(7, 20);
-            this.ltbMaritialStatusList.Name = "ltbMaritialStatusList";
-            this.ltbMaritialStatusList.Size = new System.Drawing.Size(203, 173);
-            this.ltbMaritialStatusList.TabIndex = 0;
-            this.ltbMaritialStatusList.Click += new System.EventHandler(this.ltbMaritialStatusList_Click);
-            this.ltbMaritialStatusList.SelectedIndexChanged += new System.EventHandler(this.ltbMaritialStatusList_SelectedIndexChanged);
+            this.ltbMaritalStatusList.FormattingEnabled = true;
+            this.ltbMaritalStatusList.Location = new System.Drawing.Point(7, 20);
+            this.ltbMaritalStatusList.Name = "ltbMaritalStatusList";
+            this.ltbMaritalStatusList.Size = new System.Drawing.Size(203, 173);
+            this.ltbMaritalStatusList.TabIndex = 0;
+            this.ltbMaritalStatusList.Click += new System.EventHandler(this.ltbMaritalStatusList_Click);
+            this.ltbMaritalStatusList.SelectedIndexChanged += new System.EventHandler(this.ltbMaritalStatusList_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -191,7 +191,7 @@
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Settings";
             // 
-            // frmMaritialStatus
+            // frmMaritalStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,8 +199,8 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "frmMaritialStatus";
-            this.Text = "Settings: MaritialStatus";
+            this.Name = "frmMaritalStatus";
+            this.Text = "Settings: MaritalStatus";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -213,7 +213,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox ltbMaritialStatusList;
+        private System.Windows.Forms.ListBox ltbMaritalStatusList;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label10;

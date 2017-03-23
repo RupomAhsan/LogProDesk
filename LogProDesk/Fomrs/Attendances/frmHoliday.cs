@@ -1,4 +1,5 @@
 ﻿using LogProDesk.Entity;
+using LogProDesk.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace LogProDesk.Fomrs.Attendances
 {
-    public partial class frmHoliday : Form
+    public partial class frmHoliday : BaseForm
     {
         DBContext db;
         public frmHoliday()
@@ -40,25 +41,25 @@ namespace LogProDesk.Fomrs.Attendances
         private void PopulateHolidayGrid()
         {
             var results = (from holiday in db.Holidays
-                               //join company in db.Companies on holiday.CompanyID equals company.Id into ec
-                               // from ec1 in ec.DefaultIfEmpty()
+                           //join company in db.Companies on holiday.CompanyID equals company.Id into ec
+                          // from ec1 in ec.DefaultIfEmpty()
                            join branch in db.Branches on holiday.BranchID equals branch.Id into eb
                            from eb1 in eb.DefaultIfEmpty()
-                               //join department in db.Departments on holiday.DepartmentID equals department.Id into ed
-                               //from ed1 in ed.DefaultIfEmpty()
+                           //join department in db.Departments on holiday.DepartmentID equals department.Id into ed
+                           //from ed1 in ed.DefaultIfEmpty()
                            where holiday.IsDeleted == false
 
                            select new
                            {
                                holiday.Id,
-                               // Company = ec1.Name,
+                              // Company = ec1.Name,
                                Branch = eb1.Name,
-                               // DepartmentName = ed1.Name,
+                              // DepartmentName = ed1.Name,
                                holiday.Name,
                                holiday.StartDate,
                                holiday.EndDate,
                                holiday.TotalDays,
-                               // holiday.FinancialYear,
+                              // holiday.FinancialYear,
                                Status = holiday.IsActive == true ? "Active" : "Inactive"
                            }).ToList();
             dgvHolidayDetail.DataSource = results;
@@ -68,6 +69,7 @@ namespace LogProDesk.Fomrs.Attendances
         private void PupulateDorpDownData()
         {
             PupulateBranchDDL();
+            PupulateDepartmentDDL();           
             PupulateStatusDDL();
         }
 
@@ -83,7 +85,17 @@ namespace LogProDesk.Fomrs.Attendances
             cboBranch.ValueMember = "id";
             cboBranch.DisplayMember = "name";
         }
-        
+        private void PupulateDepartmentDDL()
+        {
+            List<Department> departmentList = new List<Department> { new Department { Id = 0, Name = "--Please Select--" } };
+            foreach (var item in db.Departments.ToList().OrderBy(o => o.Name).Where(x => x.IsDeleted == false))
+            {
+                departmentList.Add(item);
+            }
+            cboDepartment.DataSource = departmentList;
+            cboDepartment.ValueMember = "id";
+            cboDepartment.DisplayMember = "name";
+        }        
         private void PupulateStatusDDL()
         {
             SortedDictionary<string, int> statusData = new SortedDictionary<string, int>
@@ -104,35 +116,32 @@ namespace LogProDesk.Fomrs.Attendances
                 anHoliday = LoadHolidayData(anHoliday);
                 try
                 {
-                    db = new DBContext();
-                    db.Holidays.Add(anHoliday);
-                    
-                    var result = db.SaveChanges();
-                    if (result > 0)
+                    HolidayDetail aHolidayDetail = new HolidayDetail();
+                    for (int i = 0; i < anHoliday.TotalDays; i++)
                     {
-                        for (int i = 0; i < anHoliday.TotalDays; i++)
+                        aHolidayDetail = new HolidayDetail();
+                        aHolidayDetail.CreatedBy =UserSessions.UserID;
+                        aHolidayDetail.CreatedDate = DateTime.Now;
+                        if (i<1)
                         {
-                            HolidayDetail aHolidayDetail = new HolidayDetail();
-                            if (i > 0)
-                            {
-                                aHolidayDetail.HolidayDate = anHoliday.StartDate.AddDays(1);
-                                aHolidayDetail.DayName = anHoliday.StartDate.AddDays(1).DayOfWeek.ToString();
-                            }
-                            else
-                            {
-                                aHolidayDetail.HolidayDate = anHoliday.StartDate;
-                                aHolidayDetail.DayName = anHoliday.StartDate.DayOfWeek.ToString();
-                            }
+                            aHolidayDetail.DayName = anHoliday.StartDate.DayOfWeek.ToString();
                             aHolidayDetail.FinancialYear = anHoliday.StartDate.Year;
-                            aHolidayDetail.DaySequence = "Day: " + (i + 1);
-                            aHolidayDetail.IsDeleted = false;
-                            aHolidayDetail.CreatedDate = DateTime.Now;
-                            aHolidayDetail.HolidayID = anHoliday.Id;
-                            db.HolidayDetails.Add(aHolidayDetail);
-                            result = db.SaveChanges();
+                            aHolidayDetail.HolidayDate = anHoliday.StartDate;
+                            
                         }
+                        else
+                        {
+                            aHolidayDetail.DayName = anHoliday.StartDate.AddDays(i+1).DayOfWeek.ToString();
+                            aHolidayDetail.FinancialYear = anHoliday.StartDate.AddDays(i + 1).Year;
+                            aHolidayDetail.HolidayDate = anHoliday.StartDate.AddDays(i + 1);
+                        }
+                        aHolidayDetail.IsDeleted = false;
+                        aHolidayDetail.DaySequence = "Day " + (i + 1);
+
+                        anHoliday.HolidayDetails.Add(aHolidayDetail);                        
                     }
-                   
+                    db.Holidays.Add(anHoliday);
+                    var result = db.SaveChanges();
                     PopulateHolidayGrid();
                     MessageBox.Show("Record Inserted Successfully");
                 }
@@ -157,7 +166,11 @@ namespace LogProDesk.Fomrs.Attendances
             {
                 errorMessage += "Branch Required. ";
             }
-            
+            //Check Department Data
+            if (Convert.ToInt32(cboDepartment.SelectedValue) == 0)
+            {
+                errorMessage += "Department Required. ";
+            }
             //Check Fullname Data
             if (String.IsNullOrEmpty(txtName.Text.Trim()))
             {
@@ -170,6 +183,31 @@ namespace LogProDesk.Fomrs.Attendances
                 {
                     errorMessage += "Invalid Name. ";
                 }
+                else
+                {
+                    if (!isUpdate)
+                    {
+                        var result = from data in db.Holidays
+                                     where data.Name == txtName.Text.Trim().ToString() && data.IsDeleted != true
+                                     select data;
+
+                        if (result.Any())
+                        {
+                            errorMessage += "Name already Exists. ";
+                        }
+                    }
+                    else
+                    {
+                        var result = from data in db.Holidays
+                                     where data.Name == txtName.Text.Trim().ToString() && data.IsDeleted != true && data.Id != holidayID
+                                     select data;
+
+                        if (result.Any())
+                        {
+                            errorMessage += "Name already Exists. ";
+                        }
+                    }
+                }
 
             }
 
@@ -178,7 +216,7 @@ namespace LogProDesk.Fomrs.Attendances
             {
                 errorMessage += "Starting Date Required. ";
             }
-
+            
             if (!String.IsNullOrEmpty(errorMessage))
             {
                 lblErrorMessage.Text = errorMessage;
@@ -204,11 +242,13 @@ namespace LogProDesk.Fomrs.Attendances
             if (dtpStartingDate.Value != null)
             {
                 anHoliday.StartDate = dtpStartingDate.Value;
-                anHoliday.EndDate = dtpStartingDate.Value.AddDays(Convert.ToDouble(nmrTotalDays.Value) - 1);
+                anHoliday.EndDate = dtpStartingDate.Value.AddDays(Convert.ToDouble(nmrTotalDays.Value)-1);
                 //anHoliday.FinancialYear = dtpStartingDate.Value.Year;
-            }
+            }            
             anHoliday.IsActive = Convert.ToBoolean(cboStatus.SelectedValue);
             anHoliday.IsDeleted = false;
+            anHoliday.CreatedDate = DateTime.Now;
+            anHoliday.CreatedBy = UserSessions.UserID;
             return anHoliday;
         }
 
@@ -224,8 +264,8 @@ namespace LogProDesk.Fomrs.Attendances
         private void LoadHolidayDetail(int id)
         {
             var hldy = from data in db.Holidays
-                       where data.Id == id
-                       select data;
+                        where data.Id == id
+                        select data;
 
             if (hldy.Any())
             {
@@ -241,29 +281,29 @@ namespace LogProDesk.Fomrs.Attendances
             //cboDepartment.SelectedValue = holiday.DepartmentID == null ? 0 : holiday.DepartmentID;
 
             txtName.Text = holiday.Name;
-            if (holiday.TotalDays == null || holiday.TotalDays < 1)
+            if(holiday.TotalDays == null || holiday.TotalDays<1)
                 nmrTotalDays.Value = 1;
             else
                 nmrTotalDays.Value = Convert.ToDecimal(holiday.TotalDays);
 
-            dtpStartingDate.Text = holiday.StartDate.ToString();
+            dtpStartingDate.Text = (holiday.StartDate.ToString()== "01/01/0001 12:00:00 AM") ? "" : holiday.StartDate.ToString();
             cboStatus.SelectedValue = holiday.IsActive == null ? 0 : Convert.ToInt32(holiday.IsActive);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (dtpFrom.Value == null)
+            if (dtpFrom.Value==null)
             {
                 PopulateHolidayGrid();
                 return;
             }
             var results = (from holiday in db.Holidays
-                               //join company in db.Companies on holiday.CompanyID equals company.Id into ec
-                               //from ec1 in ec.DefaultIfEmpty()
+                           //join company in db.Companies on holiday.CompanyID equals company.Id into ec
+                           //from ec1 in ec.DefaultIfEmpty()
                            join branch in db.Branches on holiday.BranchID equals branch.Id into eb
                            from eb1 in eb.DefaultIfEmpty()
-                               //join department in db.Departments on holiday.DepartmentID equals department.Id into ed
-                               // from ed1 in ed.DefaultIfEmpty()
+                           //join department in db.Departments on holiday.DepartmentID equals department.Id into ed
+                          // from ed1 in ed.DefaultIfEmpty()
                            where holiday.IsDeleted == false && (holiday.StartDate >= dtpFrom.Value && holiday.StartDate <= dtpFrom.Value)
 
                            select new
@@ -347,6 +387,11 @@ namespace LogProDesk.Fomrs.Attendances
             }
         }
 
-       
+        private void btnExportToExcel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

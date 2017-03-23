@@ -30,12 +30,35 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cboBranch = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cboStatus = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.chkMustCheckOut = new System.Windows.Forms.CheckBox();
+            this.chkMustCheckIn = new System.Windows.Forms.CheckBox();
+            this.nmrTotalWorkTimes = new System.Windows.Forms.NumericUpDown();
+            this.nmrTotalWorkDays = new System.Windows.Forms.NumericUpDown();
+            this.mtbEarlyAllowence = new System.Windows.Forms.MaskedTextBox();
+            this.mtbLateAllowence = new System.Windows.Forms.MaskedTextBox();
+            this.mtbEndCheckOut = new System.Windows.Forms.MaskedTextBox();
+            this.mtbBeginCheckOut = new System.Windows.Forms.MaskedTextBox();
+            this.mtbEndCheckIn = new System.Windows.Forms.MaskedTextBox();
+            this.mtbBeginCheckIn = new System.Windows.Forms.MaskedTextBox();
+            this.mtbOffDuty = new System.Windows.Forms.MaskedTextBox();
+            this.mtbOnDuty = new System.Windows.Forms.MaskedTextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.lblErrorMessage = new System.Windows.Forms.Label();
@@ -45,6 +68,9 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,23 +81,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvDetailData = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrTotalWorkTimes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrTotalWorkDays)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -81,24 +96,42 @@
             this.lblTitle.ForeColor = System.Drawing.Color.Green;
             this.lblTitle.Location = new System.Drawing.Point(12, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(76, 20);
+            this.lblTitle.Size = new System.Drawing.Size(105, 20);
             this.lblTitle.TabIndex = 5;
-            this.lblTitle.Text = "Settings";
+            this.lblTitle.Text = "Time Tables";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.numericUpDown4);
-            this.groupBox2.Controls.Add(this.numericUpDown3);
-            this.groupBox2.Controls.Add(this.numericUpDown2);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.maskedTextBox6);
-            this.groupBox2.Controls.Add(this.maskedTextBox5);
-            this.groupBox2.Controls.Add(this.maskedTextBox4);
-            this.groupBox2.Controls.Add(this.maskedTextBox3);
-            this.groupBox2.Controls.Add(this.maskedTextBox2);
-            this.groupBox2.Controls.Add(this.maskedTextBox1);
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.label26);
+            this.groupBox2.Controls.Add(this.label25);
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.cboBranch);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.cboStatus);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.chkMustCheckOut);
+            this.groupBox2.Controls.Add(this.chkMustCheckIn);
+            this.groupBox2.Controls.Add(this.nmrTotalWorkTimes);
+            this.groupBox2.Controls.Add(this.nmrTotalWorkDays);
+            this.groupBox2.Controls.Add(this.mtbEarlyAllowence);
+            this.groupBox2.Controls.Add(this.mtbLateAllowence);
+            this.groupBox2.Controls.Add(this.mtbEndCheckOut);
+            this.groupBox2.Controls.Add(this.mtbBeginCheckOut);
+            this.groupBox2.Controls.Add(this.mtbEndCheckIn);
+            this.groupBox2.Controls.Add(this.mtbBeginCheckIn);
+            this.groupBox2.Controls.Add(this.mtbOffDuty);
+            this.groupBox2.Controls.Add(this.mtbOnDuty);
             this.groupBox2.Controls.Add(this.lblID);
             this.groupBox2.Controls.Add(this.label29);
             this.groupBox2.Controls.Add(this.lblErrorMessage);
@@ -115,66 +148,311 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(235, 41);
+            this.groupBox2.Location = new System.Drawing.Point(489, 41);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(368, 452);
+            this.groupBox2.Size = new System.Drawing.Size(368, 479);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detail";
             // 
-            // maskedTextBox6
+            // label26
             // 
-            this.maskedTextBox6.Location = new System.Drawing.Point(149, 221);
-            this.maskedTextBox6.Mask = "00:00";
-            this.maskedTextBox6.Name = "maskedTextBox6";
-            this.maskedTextBox6.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox6.TabIndex = 43;
-            this.maskedTextBox6.ValidatingType = typeof(System.DateTime);
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(255, 349);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(16, 20);
+            this.label26.TabIndex = 61;
+            this.label26.Text = "*";
             // 
-            // maskedTextBox5
+            // label25
             // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(149, 195);
-            this.maskedTextBox5.Mask = "00:00";
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox5.TabIndex = 43;
-            this.maskedTextBox5.ValidatingType = typeof(System.DateTime);
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(255, 323);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(16, 20);
+            this.label25.TabIndex = 61;
+            this.label25.Text = "*";
             // 
-            // maskedTextBox4
+            // label24
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(149, 169);
-            this.maskedTextBox4.Mask = "00:00";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox4.TabIndex = 43;
-            this.maskedTextBox4.ValidatingType = typeof(System.DateTime);
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Location = new System.Drawing.Point(255, 247);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(16, 20);
+            this.label24.TabIndex = 61;
+            this.label24.Text = "*";
             // 
-            // maskedTextBox3
+            // label23
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(149, 143);
-            this.maskedTextBox3.Mask = "00:00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox3.TabIndex = 43;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(255, 299);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(16, 20);
+            this.label23.TabIndex = 61;
+            this.label23.Text = "*";
             // 
-            // maskedTextBox2
+            // label22
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(149, 117);
-            this.maskedTextBox2.Mask = "00:00";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 43;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(255, 273);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(16, 20);
+            this.label22.TabIndex = 61;
+            this.label22.Text = "*";
             // 
-            // maskedTextBox1
+            // label21
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(149, 91);
-            this.maskedTextBox1.Mask = "00:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 43;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(255, 221);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(16, 20);
+            this.label21.TabIndex = 61;
+            this.label21.Text = "*";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(255, 195);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(16, 20);
+            this.label18.TabIndex = 61;
+            this.label18.Text = "*";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Red;
+            this.label17.Location = new System.Drawing.Point(255, 169);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(16, 20);
+            this.label17.TabIndex = 61;
+            this.label17.Text = "*";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(255, 143);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(16, 20);
+            this.label16.TabIndex = 61;
+            this.label16.Text = "*";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(255, 117);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(16, 20);
+            this.label15.TabIndex = 61;
+            this.label15.Text = "*";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(255, 91);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(16, 20);
+            this.label14.TabIndex = 61;
+            this.label14.Text = "*";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(346, 42);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(16, 20);
+            this.label13.TabIndex = 61;
+            this.label13.Text = "*";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(347, 64);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(16, 20);
+            this.label20.TabIndex = 61;
+            this.label20.Text = "*";
+            // 
+            // cboBranch
+            // 
+            this.cboBranch.DisplayMember = "Id";
+            this.cboBranch.FormattingEnabled = true;
+            this.cboBranch.Location = new System.Drawing.Point(149, 64);
+            this.cboBranch.Name = "cboBranch";
+            this.cboBranch.Size = new System.Drawing.Size(198, 21);
+            this.cboBranch.TabIndex = 60;
+            this.cboBranch.ValueMember = "Id";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 64);
+            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 13);
+            this.label12.TabIndex = 59;
+            this.label12.Text = "Branch : ";
+            // 
+            // cboStatus
+            // 
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Location = new System.Drawing.Point(149, 349);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.Size = new System.Drawing.Size(100, 21);
+            this.cboStatus.TabIndex = 47;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(8, 349);
+            this.label19.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(46, 13);
+            this.label19.TabIndex = 46;
+            this.label19.Text = "Status : ";
+            // 
+            // chkMustCheckOut
+            // 
+            this.chkMustCheckOut.AutoSize = true;
+            this.chkMustCheckOut.Location = new System.Drawing.Point(188, 393);
+            this.chkMustCheckOut.Name = "chkMustCheckOut";
+            this.chkMustCheckOut.Size = new System.Drawing.Size(109, 17);
+            this.chkMustCheckOut.TabIndex = 45;
+            this.chkMustCheckOut.Text = "Must Check Out?";
+            this.chkMustCheckOut.UseVisualStyleBackColor = true;
+            // 
+            // chkMustCheckIn
+            // 
+            this.chkMustCheckIn.AutoSize = true;
+            this.chkMustCheckIn.Location = new System.Drawing.Point(61, 393);
+            this.chkMustCheckIn.Name = "chkMustCheckIn";
+            this.chkMustCheckIn.Size = new System.Drawing.Size(101, 17);
+            this.chkMustCheckIn.TabIndex = 45;
+            this.chkMustCheckIn.Text = "Must Check In?";
+            this.chkMustCheckIn.UseVisualStyleBackColor = true;
+            // 
+            // nmrTotalWorkTimes
+            // 
+            this.nmrTotalWorkTimes.DecimalPlaces = 2;
+            this.nmrTotalWorkTimes.Location = new System.Drawing.Point(149, 323);
+            this.nmrTotalWorkTimes.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmrTotalWorkTimes.Name = "nmrTotalWorkTimes";
+            this.nmrTotalWorkTimes.Size = new System.Drawing.Size(100, 20);
+            this.nmrTotalWorkTimes.TabIndex = 44;
+            // 
+            // nmrTotalWorkDays
+            // 
+            this.nmrTotalWorkDays.DecimalPlaces = 2;
+            this.nmrTotalWorkDays.Location = new System.Drawing.Point(149, 299);
+            this.nmrTotalWorkDays.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.nmrTotalWorkDays.Name = "nmrTotalWorkDays";
+            this.nmrTotalWorkDays.Size = new System.Drawing.Size(100, 20);
+            this.nmrTotalWorkDays.TabIndex = 44;
+            // 
+            // mtbEarlyAllowence
+            // 
+            this.mtbEarlyAllowence.Location = new System.Drawing.Point(149, 273);
+            this.mtbEarlyAllowence.Mask = "00:00";
+            this.mtbEarlyAllowence.Name = "mtbEarlyAllowence";
+            this.mtbEarlyAllowence.Size = new System.Drawing.Size(100, 20);
+            this.mtbEarlyAllowence.TabIndex = 43;
+            this.mtbEarlyAllowence.ValidatingType = typeof(System.DateTime);
+            // 
+            // mtbLateAllowence
+            // 
+            this.mtbLateAllowence.Location = new System.Drawing.Point(149, 247);
+            this.mtbLateAllowence.Mask = "00:00";
+            this.mtbLateAllowence.Name = "mtbLateAllowence";
+            this.mtbLateAllowence.Size = new System.Drawing.Size(100, 20);
+            this.mtbLateAllowence.TabIndex = 43;
+            this.mtbLateAllowence.ValidatingType = typeof(System.DateTime);
+            // 
+            // mtbEndCheckOut
+            // 
+            this.mtbEndCheckOut.Location = new System.Drawing.Point(149, 221);
+            this.mtbEndCheckOut.Mask = "00:00";
+            this.mtbEndCheckOut.Name = "mtbEndCheckOut";
+            this.mtbEndCheckOut.Size = new System.Drawing.Size(100, 20);
+            this.mtbEndCheckOut.TabIndex = 43;
+            this.mtbEndCheckOut.ValidatingType = typeof(System.DateTime);
+            // 
+            // mtbBeginCheckOut
+            // 
+            this.mtbBeginCheckOut.Location = new System.Drawing.Point(149, 195);
+            this.mtbBeginCheckOut.Mask = "00:00";
+            this.mtbBeginCheckOut.Name = "mtbBeginCheckOut";
+            this.mtbBeginCheckOut.Size = new System.Drawing.Size(100, 20);
+            this.mtbBeginCheckOut.TabIndex = 43;
+            this.mtbBeginCheckOut.ValidatingType = typeof(System.DateTime);
+            // 
+            // mtbEndCheckIn
+            // 
+            this.mtbEndCheckIn.Location = new System.Drawing.Point(149, 169);
+            this.mtbEndCheckIn.Mask = "00:00";
+            this.mtbEndCheckIn.Name = "mtbEndCheckIn";
+            this.mtbEndCheckIn.Size = new System.Drawing.Size(100, 20);
+            this.mtbEndCheckIn.TabIndex = 43;
+            this.mtbEndCheckIn.ValidatingType = typeof(System.DateTime);
+            // 
+            // mtbBeginCheckIn
+            // 
+            this.mtbBeginCheckIn.Location = new System.Drawing.Point(149, 143);
+            this.mtbBeginCheckIn.Mask = "00:00";
+            this.mtbBeginCheckIn.Name = "mtbBeginCheckIn";
+            this.mtbBeginCheckIn.Size = new System.Drawing.Size(100, 20);
+            this.mtbBeginCheckIn.TabIndex = 43;
+            this.mtbBeginCheckIn.ValidatingType = typeof(System.DateTime);
+            // 
+            // mtbOffDuty
+            // 
+            this.mtbOffDuty.Location = new System.Drawing.Point(149, 117);
+            this.mtbOffDuty.Mask = "00:00";
+            this.mtbOffDuty.Name = "mtbOffDuty";
+            this.mtbOffDuty.Size = new System.Drawing.Size(100, 20);
+            this.mtbOffDuty.TabIndex = 43;
+            this.mtbOffDuty.ValidatingType = typeof(System.DateTime);
+            // 
+            // mtbOnDuty
+            // 
+            this.mtbOnDuty.Location = new System.Drawing.Point(149, 91);
+            this.mtbOnDuty.Mask = "00:00";
+            this.mtbOnDuty.Name = "mtbOnDuty";
+            this.mtbOnDuty.Size = new System.Drawing.Size(100, 20);
+            this.mtbOnDuty.TabIndex = 43;
+            this.mtbOnDuty.ValidatingType = typeof(System.DateTime);
             // 
             // lblID
             // 
@@ -211,7 +489,7 @@
             this.groupBox3.Controls.Add(this.btnDelete);
             this.groupBox3.Controls.Add(this.btnClear);
             this.groupBox3.Controls.Add(this.btnAddNew);
-            this.groupBox3.Location = new System.Drawing.Point(11, 392);
+            this.groupBox3.Location = new System.Drawing.Point(11, 416);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(330, 54);
             this.groupBox3.TabIndex = 39;
@@ -259,10 +537,40 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(149, 64);
+            this.txtName.Location = new System.Drawing.Point(149, 42);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(198, 20);
             this.txtName.TabIndex = 22;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 325);
+            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(122, 13);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Count As Work Time(s) :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 299);
+            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Count As Work Day(s) :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 273);
+            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Early Allowence  :";
             // 
             // label7
             // 
@@ -337,7 +645,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 64);
+            this.label10.Location = new System.Drawing.Point(8, 42);
             this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 13);
@@ -346,10 +654,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.dgvDetailData);
             this.groupBox1.Location = new System.Drawing.Point(12, 41);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(216, 452);
+            this.groupBox1.Size = new System.Drawing.Size(471, 479);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lists";
@@ -363,130 +672,28 @@
             this.dgvDetailData.Location = new System.Drawing.Point(3, 16);
             this.dgvDetailData.Name = "dgvDetailData";
             this.dgvDetailData.ReadOnly = true;
-            this.dgvDetailData.Size = new System.Drawing.Size(210, 433);
+            this.dgvDetailData.Size = new System.Drawing.Size(465, 460);
             this.dgvDetailData.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 273);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Early Allowence  :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 299);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Count As Work Day(s) :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 325);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(122, 13);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Count As Work Time(s) :";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(149, 248);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown1.TabIndex = 44;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.DecimalPlaces = 2;
-            this.numericUpDown2.Location = new System.Drawing.Point(149, 273);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown2.TabIndex = 44;
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.DecimalPlaces = 2;
-            this.numericUpDown3.Location = new System.Drawing.Point(149, 299);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown3.TabIndex = 44;
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.DecimalPlaces = 2;
-            this.numericUpDown4.Location = new System.Drawing.Point(149, 323);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(100, 20);
-            this.numericUpDown4.TabIndex = 44;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(61, 363);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 17);
-            this.checkBox1.TabIndex = 45;
-            this.checkBox1.Text = "Must Check In?";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(188, 363);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(109, 17);
-            this.checkBox2.TabIndex = 45;
-            this.checkBox2.Text = "Must Check Out?";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.dgvDetailData.SelectionChanged += new System.EventHandler(this.dgvDetailData_SelectionChanged);
             // 
             // frmTimetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 501);
+            this.ClientSize = new System.Drawing.Size(866, 523);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTimetable";
-            this.Text = "frmTimetable";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Settings: Time Table";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrTotalWorkTimes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrTotalWorkDays)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,7 +703,7 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtbOnDuty;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label lblErrorMessage;
@@ -510,25 +717,42 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvDetailData;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox mtbEndCheckOut;
+        private System.Windows.Forms.MaskedTextBox mtbBeginCheckOut;
+        private System.Windows.Forms.MaskedTextBox mtbEndCheckIn;
+        private System.Windows.Forms.MaskedTextBox mtbBeginCheckIn;
+        private System.Windows.Forms.MaskedTextBox mtbOffDuty;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.CheckBox chkMustCheckOut;
+        private System.Windows.Forms.CheckBox chkMustCheckIn;
+        private System.Windows.Forms.NumericUpDown nmrTotalWorkTimes;
+        private System.Windows.Forms.NumericUpDown nmrTotalWorkDays;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cboStatus;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox cboBranch;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.MaskedTextBox mtbEarlyAllowence;
+        private System.Windows.Forms.MaskedTextBox mtbLateAllowence;
     }
 }

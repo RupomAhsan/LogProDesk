@@ -1,4 +1,5 @@
 ﻿using LogProDesk.Entity;
+using LogProDesk.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace LogProDesk.Fomrs.Settings
 {
-    public partial class frmUser : Form
+    public partial class frmUser : BaseForm
     {
         DBContext db;
         string imagename;
@@ -103,11 +104,14 @@ namespace LogProDesk.Fomrs.Settings
         {
             lblID.Text = aUser.Id.ToString();
             txtUserName.Text= aUser.UserName;
-            txtPassword.Text = aUser.UserName;
+            txtPassword.Text = aUser.Password;
+            txtConfirmPassword.Text = aUser.Password;
 
-            cboCompany.SelectedValue = aUser.CompanyID;
-            cboStatus.SelectedValue = aUser.IsActive;
-            cboRole.SelectedValue = aUser.RoleID;
+            cboCompany.SelectedValue = aUser.CompanyID==null?0: aUser.CompanyID;
+            cboStatus.SelectedValue =  aUser.IsActive?1:0;
+            cboRole.SelectedValue = aUser.RoleID==null?0: aUser.RoleID;
+
+            chkSystemAdmin.Checked = aUser.IsSystemAdmin==false|| aUser.IsSystemAdmin==null ? false : true;
         }
 
         private void ltbUserList_Click(object sender, EventArgs e)
@@ -129,6 +133,9 @@ namespace LogProDesk.Fomrs.Settings
                 aUser = LoadUserData(aUser);
                 try
                 {
+                    aUser.CreatedBy = UserSessions.UserID;
+                    aUser.CreatedDate = DateTime.Now;
+                    aUser.IsDeleted = false;
                     db.Users.Add(aUser);
                     var result = db.SaveChanges();
                     BindListBox();
@@ -143,9 +150,21 @@ namespace LogProDesk.Fomrs.Settings
 
         private User LoadUserData(User aUser)
         {
+            int? companyID = 0;
+            if (cboCompany.SelectedValue != null)
+                companyID = Convert.ToInt32(cboCompany.SelectedValue);
+
+            int? roleID = 0;
+            if (cboRole.SelectedValue != null)
+                roleID = Convert.ToInt32(cboRole.SelectedValue);
+
             aUser.UserName = txtUserName.Text;
             aUser.IsDeleted = false;
-            aUser.CompanyID = Convert.ToInt32(cboCompany.SelectedValue);            
+            aUser.CompanyID = companyID==0? null:companyID;
+            aUser.Password = txtPassword.Text;
+            aUser.RoleID= roleID == 0 ? null : roleID;
+            aUser.IsActive = Convert.ToInt32(cboCompany.SelectedValue) == 1 ? true : false;
+            aUser.IsSystemAdmin = chkSystemAdmin.Checked;
             return aUser;
         }
 

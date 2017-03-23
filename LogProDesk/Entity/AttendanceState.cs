@@ -9,26 +9,27 @@ namespace LogProDesk.Entity
     [Table("AttendanceState")]
     public partial class AttendanceState
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public AttendanceState()
+        {
+            Attendances = new HashSet<Attendance>();
+        }
+
         public int Id { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
-        [DataType(DataType.DateTime)]
-        private DateTime createdDate = DateTime.MinValue;
-        //public DateTime CreatedOn;
-        public DateTime CreatedDate
-        {
-            get
-            {
-                return (createdDate == DateTime.MinValue) ? DateTime.Now : createdDate;
-            }
-            set { createdDate = value; }
-        }
-        //  public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public int? CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
 
-        public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Attendance> Attendances { get; set; }
+
+        public virtual User User_CreatedBy { get; set; }
     }
 }

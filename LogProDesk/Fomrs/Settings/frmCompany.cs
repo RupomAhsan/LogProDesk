@@ -89,7 +89,8 @@ namespace LogProDesk.Fomrs.Settings
             txtName.Text= aCompany.Name;
             txtSlogan.Text= aCompany.Slogan;
             txtWeb.Text= aCompany.Website;
-            dtpExpiredDate.Text= aCompany.ExpiredDate.ToString();
+            
+            dtpExpiredDate.Text= aCompany.ExpiredDate.ToString()== "01/01/0001 12:00:00 AM"? "": aCompany.ExpiredDate.ToString();
             cboStatus.SelectedValue = aCompany.IsActive == null ? 0 : Convert.ToInt32(aCompany.IsActive);
 
             if (aCompany.Logo != null)

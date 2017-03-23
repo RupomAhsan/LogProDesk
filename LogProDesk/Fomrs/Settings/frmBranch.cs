@@ -1,4 +1,5 @@
 ﻿using LogProDesk.Entity;
+using LogProDesk.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,9 @@ using System.Windows.Forms;
 
 namespace LogProDesk.Fomrs.Settings
 {
-    public partial class frmBranch : Form
+    public partial class frmBranch : BaseForm
     {
         DBContext db;
-        string imagename;
-        int count = 0;
         public frmBranch()
         {
             db = new DBContext();
@@ -72,7 +71,7 @@ namespace LogProDesk.Fomrs.Settings
         }
         private void ltbBranchList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            count ++;
+           // count ++;
            // if(count!=1)
               //  GetData((Branch)ltbBranchList.SelectedValue);
         }
@@ -113,6 +112,9 @@ namespace LogProDesk.Fomrs.Settings
                 aBranch = LoadBranchData(aBranch);
                 try
                 {
+                    aBranch.CreatedBy = UserSessions.UserID;
+                    aBranch.CreatedDate = DateTime.Now;
+                    aBranch.IsDeleted = false;
                     db.Branches.Add(aBranch);
                     var result = db.SaveChanges();
                     BindListBox();

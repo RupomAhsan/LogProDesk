@@ -1,4 +1,5 @@
 ﻿using LogProDesk.Entity;
+using LogProDesk.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ using System.Windows.Forms;
 
 namespace LogProDesk.Fomrs.Settings
 {
-    public partial class frmEducation : Form
+    public partial class frmEducation : BaseForm
     {
         DBContext db;
         string imagename;
@@ -81,6 +82,9 @@ namespace LogProDesk.Fomrs.Settings
                 aEducation = LoadEducationData(aEducation);
                 try
                 {
+                    aEducation.CreatedBy = UserSessions.UserID;
+                    aEducation.CreatedDate = DateTime.Now;
+                    aEducation.IsDeleted = false;
                     db.Educations.Add(aEducation);
                     var result = db.SaveChanges();
                     BindListBox();

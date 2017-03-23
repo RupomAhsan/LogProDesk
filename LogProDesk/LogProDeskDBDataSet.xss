@@ -18,7 +18,7 @@
     <Shape ID="DesignTable:Holiday" ZOrder="39" X="341" Y="929" Height="305" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Leave" ZOrder="38" X="1197" Y="70" Height="305" Width="177" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:LeaveType" ZOrder="37" X="1444" Y="70" Height="172" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:MaritialStatus" ZOrder="36" X="341" Y="2272" Height="172" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:MaritalStatus" ZOrder="36" X="341" Y="2272" Height="172" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Role" ZOrder="35" X="341" Y="2514" Height="172" Width="170" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Schedule" ZOrder="34" X="1720" Y="70" Height="267" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:ScheduleAssign" ZOrder="33" X="622" Y="70" Height="286" Width="235" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
@@ -312,7 +312,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Employee_MaritialStatus" ZOrder="10" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Employee_MaritalStatus" ZOrder="10" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>382</X>
@@ -428,7 +428,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_MaritialStatus_Employee_CreateBy" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:FK_MaritalStatus_Employee_CreateBy" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>271</X>

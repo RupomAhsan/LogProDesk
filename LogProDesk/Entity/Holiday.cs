@@ -9,10 +9,17 @@ namespace LogProDesk.Entity
     [Table("Holiday")]
     public partial class Holiday
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Holiday()
+        {
+            HolidayDetails = new HashSet<HolidayDetail>();
+        }
+
         public int Id { get; set; }
 
-        public int? BranchID { get; set; }
+        public int BranchID { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
@@ -22,20 +29,9 @@ namespace LogProDesk.Entity
 
         public int TotalDays { get; set; }
 
-        [DataType(DataType.DateTime)]
-        private DateTime createdDate = DateTime.MinValue;
-        //public DateTime CreatedOn;
-        public DateTime CreatedDate
-        {
-            get
-            {
-                return (createdDate == DateTime.MinValue) ? DateTime.Now : createdDate;
-            }
-            set { createdDate = value; }
-        }
-        //  public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public int? CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
 
         public DateTime? UpdatedDate { get; set; }
 
@@ -44,5 +40,14 @@ namespace LogProDesk.Entity
         public bool IsDeleted { get; set; }
 
         public bool IsActive { get; set; }
+
+        public virtual Branch Branch { get; set; }
+
+        public virtual User User_CreatedBy { get; set; }
+
+        public virtual User User_UpdatedBy { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HolidayDetail> HolidayDetails { get; set; }
     }
 }

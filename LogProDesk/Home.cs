@@ -1,19 +1,22 @@
 ﻿using LogProDesk.Fomrs.Attendances;
+using LogProDesk.Fomrs.Authentications;
 using LogProDesk.Fomrs.Settings;
 using LogProDesk.ReportDetail.Viewer;
+using LogProDesk.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LogProDesk
 {
-    public partial class Home : Form
+    public partial class Home : BaseForm
     {
         public Home()
         {
@@ -23,7 +26,7 @@ namespace LogProDesk
 
         private void searchAddEditDeleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EmployeeInfo anEmployeeInfo = new EmployeeInfo();
+            frmEmployee anEmployeeInfo = new frmEmployee();
             anEmployeeInfo.ShowDialog();
         }
 
@@ -72,8 +75,8 @@ namespace LogProDesk
        
         private void maritialStatusToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMaritialStatus afrmMaritialStatus = new frmMaritialStatus();
-            afrmMaritialStatus.ShowDialog();
+            frmMaritalStatus afrmMaritalStatus = new frmMaritalStatus();
+            afrmMaritalStatus.ShowDialog();
         }
 
         private void roleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,6 +100,44 @@ namespace LogProDesk
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void Home_Resize(object sender, EventArgs e)
+        {
+            this.Invalidate();
+        }
+        [DllImport("user32.dll")]
+        static extern int ReleaseDC(IntPtr hWnd, IntPtr hDC);
+
+        [DllImport("User32.dll")]
+
+        private static extern IntPtr GetWindowDC(IntPtr hWnd);
+
+        protected override void WndProc(ref System.Windows.Forms.Message m)
+        {
+            const int WM_NCPAINT = 0x85;
+            base.WndProc(ref m);
+
+            if (m.Msg == WM_NCPAINT)
+            {
+
+                IntPtr hdc = GetWindowDC(m.HWnd);
+                if ((int)hdc != 0)
+                {
+                    Graphics g = Graphics.FromHdc(hdc);
+                    g.DrawLine(Pens.Green, 10, 10, 100, 10);
+                    g.Flush();
+                    ReleaseDC(m.HWnd, hdc);
+                }
+
+            }
+
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword afrmChangePassword = new frmChangePassword();
+            afrmChangePassword.ShowDialog();
         }
     }
 }

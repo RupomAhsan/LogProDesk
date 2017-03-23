@@ -11,13 +11,16 @@ namespace LogProDesk.Entity
     {
         public int Id { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string Name { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public int? CreatedBy { get; set; }
+        public int CreatedBy { get; set; }
 
-        public bool? IsDeleted { get; set; }
+        public bool IsDeleted { get; set; }
+
+        public virtual User User_CreatedBy { get; set; }
     }
 }

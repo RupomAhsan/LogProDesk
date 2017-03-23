@@ -29,101 +29,111 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.txtNewPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboCompany = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cboCompany);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.btnClose);
+            this.groupBox1.Controls.Add(this.btnChangePassword);
+            this.groupBox1.Controls.Add(this.txtConfirmPassword);
+            this.groupBox1.Controls.Add(this.txtNewPassword);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 291);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(361, 185);
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Please Enter your Username & Password";
+            this.groupBox1.Text = "Please Enter New and Old Password";
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User Name: ";
+            this.pictureBox1.Image = global::LogProDesk.Properties.Resources.Key_L;
+            this.pictureBox1.Location = new System.Drawing.Point(251, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = global::LogProDesk.Properties.Resources.cancel_btn;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(212, 134);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 37;
+            this.btnClose.Text = "C&lose";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangePassword.Image = global::LogProDesk.Properties.Resources.Update_S;
+            this.btnChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChangePassword.Location = new System.Drawing.Point(71, 134);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(135, 23);
+            this.btnChangePassword.TabIndex = 4;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Location = new System.Drawing.Point(109, 57);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(136, 20);
+            this.txtConfirmPassword.TabIndex = 3;
+            // 
+            // txtNewPassword
+            // 
+            this.txtNewPassword.Location = new System.Drawing.Point(109, 33);
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Size = new System.Drawing.Size(136, 20);
+            this.txtNewPassword.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 124);
+            this.label2.Location = new System.Drawing.Point(6, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Password: ";
+            this.label2.Text = "Confirm Password: ";
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(124, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 157);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
-            // 
-            // cboCompany
-            // 
-            this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(123, 66);
-            this.cboCompany.Name = "cboCompany";
-            this.cboCompany.Size = new System.Drawing.Size(167, 21);
-            this.cboCompany.TabIndex = 36;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 66);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 13);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Copmany : ";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "New Password : ";
             // 
             // frmChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 316);
+            this.ClientSize = new System.Drawing.Size(385, 209);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmChangePassword";
-            this.Text = "frmChangePassword";
+            this.Text = "User Profile: Change Password";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,12 +141,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboCompany;
-        private System.Windows.Forms.Label label5;
     }
 }

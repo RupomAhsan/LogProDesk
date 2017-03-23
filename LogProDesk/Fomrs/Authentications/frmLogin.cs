@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace LogProDesk.Fomrs.Authentications
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : BaseForm
     {
         DBContext db;
         public frmLogin()
@@ -22,6 +22,8 @@ namespace LogProDesk.Fomrs.Authentications
             db = new DBContext();
             PupulateDorpDownData();
             txtPassword.PasswordChar = '*';
+            txtPassword.Text = "pass";
+            txtUserName.Text = "test";
             int usrID = UserSessions.UserID;
         }
         private void PupulateDorpDownData()
